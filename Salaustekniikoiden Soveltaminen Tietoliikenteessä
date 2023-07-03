@@ -1,0 +1,459 @@
+Salaustekniikoiden soveltaminen tietoliikenteessä:
+
+Salaus tallennuksessa ja tietokannoissa:
+
+
+	Tiedon salaaminen: 
+	
+	Tiedon salaaminen tarkoittaa tiedon muuttamista epäluettavaksi muille kuin valtuutetuille 
+	käyttäjille. Salausprosessi käyttää salausalgoritmia ja salausta avaimella, joka muuttaa tiedon 
+	salaiseksi muodoksi. Salausmenetelmiä voidaan soveltaa eri tasoille, kuten koko tietokannalle, 
+	taulukoille, sarakkeille tai jopa yksittäisille tietueille.
+
+	Salauksen toteuttaminen tietokannoissa: 
+
+	Tietokannoissa salaus voidaan toteuttaa eri tavoin riippuen tietokannan järjestelmästä ja 
+	tarpeista. Yleisimpiä salausmenetelmiä ovat kokonaisen tietokannan salaus, jossa koko 
+	tietokanta on salattu ja sen sisältöä ei ole mahdollista lukea ilman asianmukaista salausta 
+	ja purkamista. Toinen tapa on salata tietokannan taulukot tai sarakkeet, jolloin vain valitut 
+	tiedot ovat salattuja ja loput ovat avoimia. Lisäksi on mahdollista salata tietokannan varmuuskopiot 
+	ja lokitiedostot, jotta niiden sisältöä ei ole saatavilla luvattomille käyttäjille.
+
+	Salauksen avainten hallinta: 
+	
+	Salauksessa käytettäviä avaimia on tärkeää hallita asianmukaisesti. Avaimet ovat salausta ja 
+	purkamista varten tarvittavia tietoja, ja niiden turvallinen säilytys ja jakelu ovat kriittisiä. 
+	Hyvä käytäntö on käyttää vahvoja ja ainutkertaisia avaimia, joita säilytetään turvallisessa 
+	avaintenhallintajärjestelmässä. Avainten käyttöoikeuksien hallinta ja valtuutettujen käyttäjien 
+	seuranta auttavat varmistamaan, että vain oikeutetut henkilöt voivat käyttää salausta purkaakseen tiedot.
+
+
+Salaustekniikoiden käyttö tiedon tallennuksessa:
+
+
+	Auttaa suojaamaan tallennetun tiedon luvattomalta käytöltä, varkaudelta tai paljastumiselta, 
+	jopa tilanteissa, joissa fyysinen pääsy tallennusvälineisiin on mahdollista. Alla on joitain 
+	yleisimpiä salaustekniikoita, joita voidaan käyttää tiedon tallennuksessa.
+	
+	Tärkeää valita sopiva salaustekniikka, joka vastaa organisaation tarpeita ja tietoturvatavoitteita. 
+	Lisäksi on olennaista huolehtia salausavainten turvallisesta hallinnasta ja valvoa tiedon 
+	käyttöoikeuksia asianmukaisesti.
+	
+	Tiedoston salaaminen: 
+	
+	Tarkoittaa tiedoston sisällön muuttamista salaiseksi muodoksi. Tiedostoja voidaan salata käyttämällä 
+	symmetristä tai asymmetristä salausta. Symmetrinen salaaminen käyttää samaa salausavainta tiedon 
+	salaamiseen ja purkamiseen, kun taas asymmetrinen salaaminen käyttää julkista ja yksityistä avainta 
+	tiedon salaamiseen ja purkamiseen.
+
+	Tietokannan salaus: 
+
+	Kattaa koko tietokannan tai sen osan, kuten taulukot, sarakkeet tai tietueet. Salauksen avulla 
+	tiedon lukeminen on mahdollista vain asianmukaisilla purkamisavaimilla. Tietokannan salaus auttaa 
+	suojaamaan arkaluonteista tietoa, kuten henkilötietoja tai liikesalaisuuksia, luvattomalta pääsyltä.
+
+	Kansiotason salaaminen: 
+
+	Kansioihin tallennettujen tiedostojen salaamista. Salaaminen tapahtuu yleensä automaattisesti 
+	tiedoston tallennuksen yhteydessä ja purkaminen tiedoston avaamisen yhteydessä. Tämä auttaa suojaamaan 
+	tiedostoja ja kansioita luvattomalta pääsyltä, vaikka tallennusvälineet joutuisivat vääriin käsiin.
+
+	Levytason salaaminen: 
+	
+	Koko tallennusvälineen, kuten kiintolevyn tai SSD:n, salaamista. Salaaminen toteutetaan fyysisellä 
+	tasolla, mikä tarkoittaa, että kaikki tallennusvälineelle tallennettu tieto on salattua. Auttaa 
+	suojaamaan tiedot, vaikka tallennusväline itsessään olisi varastettu tai kadonnut.
+
+	Tiedon anonymisointi: 
+	
+	Menetelmä, jossa henkilökohtaiset tai tunnistettavat tiedot poistetaan tai muutetaan sellaiseen 
+	muotoon, ettei yksittäistä henkilöä voida tunnistaa. Anonymisointi voi sisältää tiedon peittämistä, 
+	satunnaistamista tai aggregointia. Tämä auttaa suojaamaan yksityisiä tietoja ja estämään 
+	henkilöllisyyden paljastumisen.
+
+
+Tietokantojen salausmenetelmät ja käytännöt:
+
+	
+	Liittyvät tietokantojen tietoturvaan ja varmistavat, että tallennettu data on suojattu ulkopuolisilta 
+	uhilta. Tässä on joitakin yleisiä tietokantojen salausmenetelmiä ja niihin liittyviä käytäntöjä.
+	Tärkeää myös arvioida tietokannan turvavaatimukset ja valita sopivat salausmenetelmät ja käytännöt 
+	vastaamaan organisaation tarpeita.
+	
+	Tietokantojen salaus:
+	
+	Salaus on tietoturvatoimenpide, joka suojaa tallennettua tietoa varkaudelta, luvattomalta käytöltä 
+	ja muilta uhilta. Tässä on joitakin yleisiä tietokantojen salaamiseen liittyviä käytäntöjä
+	Vaikuttaa suorituskykyyn ja tietokannan käyttöön. Ennen salauksen käyttöönottoa on suositeltavaa 
+	tehdä huolellinen suunnittelu ja arvioida vaikutukset tietokannan toimintaan. Lisäksi on tärkeää 
+	huolehtia salausavainten hallinnasta, käyttöoikeuksista ja tietokannan suojaamisesta.
+	
+	Koko tietokannan salaus:
+
+	Kaikki tietokannan tiedot salataan kokonaisuudessaan. Salauksen purkuvaatii salausavaimen, 
+	joka on pidettävä turvallisessa säilytyspaikassa. Tarjoaa vahvan suojan, mutta voi vaikuttaa 
+	suorituskykyyn ja tietokannan käsittelyyn.
+	
+	Osittainen tietokannan salaus:
+
+	Vain tietyt tietokannan osat, kuten herkät tiedot tai tietyt sarakkeet, salataan. Osittainen 
+	salaus voi olla hyödyllinen, kun vain tietyt tietokannan tiedot vaativat erityistä suojaa.
+	Salaamattomat tiedot ovat edelleen käytettävissä ja suorituskykyvaikutukset voivat olla pienemmät 
+	kuin koko tietokannan salauksessa.
+	
+	Saraketasoinen salaus:
+
+	Tietokannan taulujen sarakkeet salataan erikseen. Esimerkiksi herkät tiedot, kuten henkilötunnukset 
+	tai luottokorttinumerot, voidaan salata, kun ne tallennetaan tietokantaan. Salausavaimet on 
+	säilytettävä turvallisesti, jotta tiedot voidaan salata ja purkaa tarvittaessa.
+	
+	Kryptografiset tietokannat:
+
+	Tietokannat ovat tietokantoja, jotka on suunniteltu sisäänrakennetulla salauksella. Tarjoavat 
+	automaattisen tietojen salauksen tallennuksen ja purun yhteydessä. Kryptografiset tietokannat 
+	voivat sisältää myös muita tietoturvaominaisuuksia, kuten käyttöoikeuksien hallintaa ja 
+	tarkistuslokeja.
+
+
+Tiedoston salaus:
+
+	Sisältö muunnetaan salaamattomasta muodosta salaamiseen, jotta se ei ole luettavissa ilman 
+	salauksen purkamista. Tiedoston salaaminen tarjoaa tietoturvaa, kun tiedostoja ja tietoja 
+	lähetetään tai tallennetaan, erityisesti silloin kun niillä on arkaluonteista tai arvokasta 
+	sisältöä.
+
+	Erityisesti kun tiedostoja siirretään tai tallennetaan epäluotettaviin ympäristöihin tai 
+	jaetaan ulkopuolisten osapuolien kanssa. Salauksen avulla varmistetaan, että tiedostot ovat 
+	turvassa ja luottamukselliset tiedot pysyvät suojattuina.
+	
+	Salausalgoritmit:
+
+	Tiedoston salauksessa käytetään salausalgoritmeja, jotka muuttavat tiedoston sisällön 
+	salaamattomasta muodosta salatuksi muodoksi. Yleisiä salausalgoritmeja tiedoston salauksessa 
+	ovat esimerkiksi AES (Advanced Encryption Standard), RSA (Rivest-Shamir-Adleman) ja Blowfish.
+
+	Salausavaimet:
+
+	Tiedoston salaamiseen ja purkamiseen tarvitaan salaustekniikassa käytettäviä salausavaimia.
+	Salausavain voi olla symmetrinen, jossa sama avain käytetään sekä salaamiseen että purkamiseen, 
+	tai asymmetrinen, jossa käytetään erillisiä julkisia ja yksityisiä avaimia.
+	
+	Salausmenetelmät:
+
+	Tiedoston salaus voidaan toteuttaa joko tiedostotasolla tai tiedoston sisällön salaamisena.
+	Tiedostotason salaaminen tarkoittaa, että koko tiedosto salataan kokonaisuudessaan.
+	Sisällön salaaminen tarkoittaa, että vain tiedoston tietty osa tai sisältö salataan.
+
+	Salauksen purku ja avainten hallinta:
+
+	Salausavaimen käyttöönotto ja oikeiden avainten hallinta ovat tärkeitä tiedoston salauksessa.
+	Salauksen purkuvaatii oikean salausavaimen, joka on pidettävä turvallisessa säilytyspaikassa.
+	
+	Turvallisuus ja avainten hallinta:
+
+	Tiedoston salaamisen lisäksi on tärkeää huolehtia salausavainten turvallisesta hallinnasta 
+	ja säilytyksestä. Avainten jakamista, rotaatiota ja hallintaa on suunniteltava huolellisesti, 
+	jotta estetään luvaton pääsy avaimiin ja salaamattoman tiedon vuoto.
+
+
+Saraketasoinen salaus:
+
+	Saraketasoinen salaus (column-level encryption) on tietokantatason salausmenetelmä, jossa 
+	tietokannan taulujen sarakkeiden tiedot salataan ennen tallentamista tietokantaan. 
+	Saraketasoinen salaus tarjoaa lisäkerroksen tietoturvaa ja luottamuksellisuutta tietokannassa 
+	säilytettäville tiedoille. tehokas keino suojaamiseen tietokantojen sisällä olevia arkaluonteisia 
+	tietoja. Se auttaa varmistamaan, että tiedot säilyvät suojattuina, vaikka tietokannan turvallisuus 
+	heikkenisi esimerkiksi haittaohjelmien tai luvattoman pääsyn vuoksi.
+	
+	Salauksen soveltaminen:
+
+	Saraketasoista salausta voidaan soveltaa valikoivasti tietokannan sarakkeisiin, joissa on 
+	arkaluonteista tai luottamuksellista tietoa, kuten henkilötunnus, pankkitiedot tai terveystiedot.
+	Salaus voidaan toteuttaa tietokantapalvelimen tasolla, jolloin salaus tapahtuu automaattisesti 
+	tietokannan sisäisesti. Tämä mahdollistaa sovellusten käyttää salaamattomia tietoja normaalisti, 
+	koska salaaminen ja purkaminen hoidetaan taustalla.
+
+	Salausavainten hallinta:
+
+	Saraketasoisessa salauksessa jokaiselle salatulle sarakkeelle liittyy oma salaussavain.
+	Salausavaimet on huolellisesti hallittava ja suojattava. Ne tulisi tallentaa turvallisesti, 
+	esimerkkinä avaintenhallintajärjestelmään, joka valvoo avainten käyttöoikeuksia ja pääsyä.
+
+	Salauksen suorituskyky ja vaikutukset:
+
+	Saraketasoinen salaus voi vaikuttaa tietokannan suorituskykyyn, koska salauksen ja purkamisen 
+	prosessit aiheuttavat ylimääräistä laskentakuormaa. Tärkeää arvioida salauksen vaikutusta 
+	suorituskykyyn ja tarvittaessa optimoida tietokantaresurssien käyttöä, kuten valita tehokkaampia 
+	salausalgoritmeja tai harkita tietokannan suorituskykyominaisuuksien skaalaamista.
+
+	Käyttöoikeuksien hallinta:
+
+	Salattujen sarakkeiden tiedot eivät ole suoraan luettavissa tietokannasta ilman asianmukaista 
+	salausta purkavaa prosessia. Käyttäjille ja sovelluksille on annettava asianmukaiset 
+	käyttöoikeudet tiedon salauksen purkamiseen, jotta he voivat käsitellä ja käyttää salattua tietoa.
+
+Avainten hallinta:
+
+	Keskeinen osa salaustekniikoita ja tietoturvaa. Avainten hallinnalla tarkoitetaan salausten 
+	avainten luomista, jakamista, säilyttämistä, vaihtamista ja päivittämistä sekä avainten 
+	luotettavaa tuhoamista tarvittaessa. Edellyttää hyvää käytäntöjen noudattamista, 
+	järjestelmällisyyttä ja asianmukaista turvallisuusajattelua. On tärkeää pitää huolta avainten 
+	luottamuksellisuudesta, koska avainten menetys tai väärinkäyttö voi johtaa tietoturvariskiin 
+	ja tietojen paljastumiseen.
+	
+	Avainten generointi:
+
+	Salausmenetelmien käyttämät avaimet on luotava riittävän pitkiksi ja monimutkaisiksi, jotta 
+	niiden murtaminen olisi erittäin vaikeaa. Avaimien generointiin tulee käyttää luotettavia 
+	satunnaislukugeneraattoreita, jotka tuottavat ennustamattomia arvoja.
+
+	Avainten jakaminen ja säilyttäminen:
+
+	Salaustekniikassa käytettävät avaimet on jaettava vain niille henkilöille tai järjestelmille, 
+	joilla on oikeus niiden käyttöön. Avaimet on säilytettävä turvallisessa ympäristössä, 
+	esimerkiksi salaustekniikkaan erikoistuneessa avaintenhallintajärjestelmässä tai turvallisessa 
+	fyysisessä säilytyspaikassa.
+
+	Avainten vaihtaminen ja päivittäminen:
+
+	Avainten säännöllinen vaihtaminen ja päivittäminen on tärkeää tietoturvan ylläpitämiseksi.
+	Vaihtaminen voi tapahtua esimerkiksi aika- tai tapahtumapohjaisesti, ja uudet avaimet on 
+	jaettava luotettavasti asianomaisille osapuolille.
+
+	Avainten luotettava tuhoaminen:
+
+	Kun avainta ei enää tarvita, se on tuhottava luotettavalla tavalla varmistaen, ettei 
+	kukaan pääse käyttämään tai palauttamaan sitä. Tuhoutuminen voi tapahtua fyysisesti, 
+	kuten avainten fyysisellä tuhoamisella tai digitaalisesti, kuten avainten poistamisella 
+	salausjärjestelmästä ja varmistamalla, ettei niitä voida palauttaa.
+	 
+	
+Tietokantakäyttöoikeudet:
+
+
+	Millä tavoin käyttäjät voivat käyttää ja hallita tietokantoja. Käyttöoikeuksien avulla 
+	voidaan rajoittaa tietokantaan pääsyä ja ohjata, mitä toimintoja käyttäjät voivat suorittaa 
+	tietokannassa. Oikeudet voidaan määrittää käyttäjäkohtaisesti, jolloin jokaisella käyttäjällä 
+	voi olla erilaiset oikeudet tietokantaan. Lisäksi käyttöoikeudet voidaan määrittää taulu- tai 
+	saraketasolla, mikä mahdollistaa hienovaraisemman hallinnan tietokannan käyttöoikeuksista.
+	Liian laajat käyttöoikeudet voivat altistaa tietokannan väärinkäytöksille tai tietoturvariskeille. 
+	Vastaavasti liian tiukat käyttöoikeudet voivat haitata laillista käyttöä ja tehokasta tietokannan 
+	hallintaa.
+
+	
+	Luku (READ): 
+
+	Käyttäjällä on oikeus lukea tietoja tietokannasta. Tämä oikeus mahdollistaa tiedon hakemisen 
+	tietokannasta, mutta ei mahdollista tietojen muokkaamista.
+
+	Kirjoitus (WRITE, UPDATE, DELETE): 
+	
+	Käyttäjällä on oikeus muokata tietokannassa olevia tietoja. INSERT-oikeus mahdollistaa uuden 
+	tiedon lisäämisen tietokantaan, UPDATE-oikeus mahdollistaa olemassa olevien tietojen päivittämisen
+	ja DELETE-oikeus mahdollistaa tietojen poistamisen tietokannasta.
+
+	Taulujen ja tietokantojen luominen (CREATE): Käyttäjällä on oikeus luoda uusia tauluja ja 
+	tietokantoja tietokantaan.
+
+	Taulujen ja tietokantojen poistaminen (DROP): Käyttäjällä on oikeus poistaa tauluja ja 
+	tietokantoja tietokannasta.
+
+	Käyttäjänhallinta (USER MANAGEMENT): 
+
+	Käyttäjällä on oikeus myöntää ja peruuttaa muiden käyttäjien käyttöoikeuksia tietokannassa. 
+	Tämä oikeus mahdollistaa käyttäjienhallinnan ja tietokantakäyttöoikeuksien hallinnan.
+
+
+Tietokannan suojaaminen ulkoisilta uhilta:
+
+	Tietokannan suojaaminen ulkoisilta uhilta on tärkeä osa tietoturvaa. Tässä on joitain keskeisiä 
+	toimenpiteitä tietokannan suojaamiseksi ulkoisilta uhilta. Seuraavat toimenpiteet auttavat 
+	suojaamaan tietokantaa ulkoisilta uhilta ja varmistamaan tietojen luottamuksellisuuden, eheyden 
+	ja saatavuuden. On tärkeää ottaa huomioon myös tietokannan käyttöympäristöön liittyvät 
+	erityisvaatimukset ja noudattaa tietoturvaparhaita käytäntöjä koko tietokannan elinkaaren ajan.
+
+
+	Vahva käyttäjätunnistus ja -todennus: 
+	
+	Käytä vahvoja salasanoja ja monikerroksista todennusta tietokantaan kirjautumisessa. Varmista myös, 
+	että käyttäjätunnuksia hallitaan asianmukaisesti ja että poistuneiden käyttäjien tilit suljetaan.
+
+	Verkkoliikenteen salaaminen: 
+	Käytä SSL/TLS-protokollaa tietokannan yhteyksien salaamiseen. Tämä estää tiedon urkinnan ja 
+	salasanojen kalastelun verkon kautta.
+
+	Palo- ja verkkosuojauksen käyttö: 
+	
+	Käytä palomuureja, tunkeutumisen havaitsemisjärjestelmiä ja muuta verkkosuojauksen tekniikkaa 
+	suojamaan tietokantapalvelinta ulkoisilta hyökkäyksiltä.
+
+	Päivitysten ja haavoittuvuuksien hallinta: 
+	
+	Pidä tietokannan ohjelmisto päivitettynä ja asenna turvallisuuspäivitykset mahdollisimman pian. 
+	Seuraa tietokantaohjelmiston valmistajan tiedotteita ja tietoturvapäivityksiä.
+
+	ietokannan haavoittuvuusanalyysi: 
+	
+	Suorita säännöllisesti tietokannan haavoittuvuusanalyysejä tunnistaaksesi tietokannan mahdolliset 
+	haavoittuvuudet ja puutteet tietoturvassa.
+
+	Varmuuskopiointi ja palautus: 
+	
+	Tee säännöllisiä varmuuskopioita tietokannasta ja testaa palautusprosessi säännöllisesti 
+	varmistaaksesi, että saat tietosi takaisin, jos joudut käsittelemään tietokannan kompromissia.
+
+	Käyttöoikeuksien hallinta: 
+	
+	Rajoita käyttäjien pääsyä tietokantaan ja anna heille vain tarvittavat oikeudet. Käytä roolipohjaista 
+	käyttöoikeuksien hallintaa estääksesi luvattomia toimintoja.
+
+	Tietojen salaaminen: 
+	
+	Salaussuojaus voidaan käyttää arkaluonteisten tietojen, kuten henkilötietojen, salaukseen tietokannassa. 
+	Tämä tarjoaa ylimääräisen suojakerroksen, jos tietokantaan murtaudutaan.
+
+	Haittaohjelmien torjunta: 
+	
+	Käytä haittaohjelmien torjuntaohjelmia ja suorita säännöllisiä tarkistuksia tietokannan 
+	haittaohjelmien havaitsemiseksi ja poistamiseksi.
+
+	Tietokannan valvonta ja lokien tarkistus: 
+	
+	Seuraa ja valvo tietokannan toimintaa tarkkailemalla lokitietoja. Tunnista epäilyttävät toiminnot 
+	ja mahdolliset hyökkäykset mahdollisimman varhaisessa vaiheessa.
+
+
+Salaustekniikoiden soveltaminen tiedon siirrossa: 
+
+
+	Seuraavilla tavoin varmistetaan, että tiedonsiirrossa olevat tiedot ovat suojattuja ja vain oikeutetut 
+	osapuolet voivat lukea ja tulkita niitä. Voidaan soveltaa tiedon siirrossa erilaisilla viestintäkanavilla, 
+	kuten verkkosivustot, sähköposti, etäyhteydet ja virtuaaliset erillisverkot. Niiden avulla varmistetaan, 
+	että tiedot pysyvät turvassa ja suojattuina mahdollisilta tietomurroilta tai väärinkäytöksiltä.
+	
+	SSL/TLS (Secure Sockets Layer/Transport Layer Security): 
+	
+	SSL- tai TLS-protokollat tarjoavat salausta ja tietoturvaa verkkoyhteyden muodostamisessa palvelimen ja 
+	asiakkaan välillä. Näitä protokollia käytetään yleisesti esimerkiksi verkkosivustojen HTTPS-yhteyksissä, 
+	sähköpostin salaamisessa ja virtuaalisten erillisverkkojen (VPN) toteuttamisessa.
+
+	SSH (Secure Shell): 
+	
+	SSH on protokolla, joka mahdollistaa turvallisen etäyhteyden muodostamisen palvelimelle. Se tarjoaa salausta 
+	ja todennusta sekä tiedon siirtoon että etäkäyttöön. SSH:ta käytetään laajasti esimerkiksi etäkomentojen 
+	suorittamiseen, tiedostojen siirtoon ja etäyhteyksien salaamiseen.
+
+	VPN (Virtual Private Network): VPN luo turvallisen yhteyden kahden tai useamman verkon välille internetin yli. 
+	Se käyttää erilaisia salaustekniikoita, kuten SSL/TLS, IPsec (Internet Protocol Security) tai L2TP 
+	(Layer 2 Tunneling Protocol), varmistaakseen tiedon salatun siirron verkon yli. VPN:tä käytetään usein 
+	etätyöhön, organisaatioiden sisäiseen verkkoliikenteeseen ja tietoturvalliselle selailulle.
+
+	PGP (Pretty Good Privacy) ja S/MIME (Secure/Multipurpose Internet Mail Extensions): 
+	
+	Nämä ovat salaustekniikoita, jotka tarjoavat salatun sähköpostiviestinnän. PGP käyttää asymmetristä salausta, 
+	kun taas S/MIME käyttää sekä symmetristä että asymmetristä salausta. Näitä tekniikoita käytetään usein lähettämään 
+	salaista tai arkaluonteista tietoa sähköpostitse.
+
+	IPSec (Internet Protocol Security): IPSec on protokolla, joka tarjoaa tietoturvaa IP-verkkoliikenteelle. 
+	Se käyttää salausalgoritmeja ja autentikointia varmistaakseen tietoturvan IP-pakettien siirrossa. IPSec:ä 
+	käytetään usein virtuaalisten yksityisten verkkojen (VPN) toteuttamisessa, etäyhteyksissä ja tietoliikenteen 
+	suojaamisessa.
+
+
+Salaustekniikoiden soveltaminen tiedon käsittelyssä: 
+
+	Tiedostojen salaus: 
+	
+	Salaustekniikkaa voidaan käyttää tiedostojen salauksessa, jotta tiedot pysyvät turvassa, kun ne tallennetaan 
+	tai siirretään. Tiedostojen salausmenetelmät käyttävät erilaisia salausalgoritmeja, kuten symmetristä tai 
+	asymmetristä salakirjoitusta, varmistaakseen, että tiedot ovat vain oikeutettujen käyttäjien saatavilla.
+
+	Tietokannan salaaminen: 
+
+	Tietokantojen sisältämä arkaluontoinen tieto voidaan suojata salaustekniikoilla. Tietokannan salaus voi 
+	tapahtua kenttätasolla, jossa tietyt tiedot salataan, tai jopa koko tietokannan tasolla, jossa koko tietokanta 
+	salataan. Tällöin vain oikeutetut käyttäjät, joilla on oikeat salaustunnisteet tai salauksen purkamiseen 
+	tarvittavat avaimet, voivat tulkita tietoja.
+
+	Salattujen tunnisteiden käyttö: 
+	
+	Tiedonkäsittelyssä voidaan käyttää salattuja tunnisteita tai tokeneita, jotka eivät paljasta suoraan 
+	arkaluontoisia tietoja. Salatut tunnisteet voivat olla esimerkiksi käyttäjän tunnistetietoja tai avaimia, 
+	jotka mahdollistavat tietyn toiminnon suorittamisen tai pääsyn tiettyihin resursseihin. Tällä tavoin tieto 
+	säilyy turvassa, vaikka tunnisteet joutuisivat vääriin käsiin.
+
+	Salaus pilvipalveluissa: 
+	
+	Tiedot tallennetaan tai käsitellään pilvipalveluissa, salaustekniikoita voidaan käyttää varmistamaan, 
+	että tiedot pysyvät turvassa. Pilvipalveluntarjoajat tarjoavat usein tietojen salaamista ja salaustason 
+	hallintaa palveluidensa kautta, jolloin käyttäjät voivat varmistaa, että heidän tallentamansa tiedot ovat 
+	suojattuja.
+
+	Salattujen yhteyksien käyttö: 
+	
+	Tiedonkäsittelyssä tarvitaan tiedonsiirtoa verkossa, salaustekniikoita voidaan käyttää varmistamaan, 
+	että tiedot siirtyvät turvallisesti. Esimerkiksi SSL/TLS-protokolla tarjoaa salatun yhteyden verkkopalvelun 
+	ja asiakkaan välillä, mikä estää kolmansia osapuolia pääsemästä käsiksi siirrettäviin tietoihin.
+
+	Hybridi-salausmenetelmät:
+	
+	Hybridisalausmenetelmät yhdistävät symmetrisen ja asymmetrisen salauksen tekniikat tiedon suojaamiseksi. 
+	Symmetrinen salaus käyttää samaa salausavainta tiedon salauksessa ja purkamisessa, kun taas asymmetrisessä 
+	salauksessa käytetään julkista avainta tiedon salaukseen ja yksityistä avainta salauksen purkamiseen. 
+	Hybridisalauksessa käytetään molempia menetelmiä: ensin luodaan julkisen ja yksityisen avaimen pari 
+	asymmetrisen salauksen periaatteella, sitten tiedot salataan symmetrisellä salausavaimella, ja lopuksi 
+	symmetrinen salausavain salataan vastaanottajan julkisella avaimella. Tämä yhdistelmä tarjoaa tehokkaan 
+	ja turvallisen tavan tiedon suojaamiseen.
+
+
+Salauksen merkitys tietoturvakäytännöissä: 
+
+	Salausmenetelmät auttavat suojaamaan arkaluontoista tietoa luvattomalta pääsyltä ja varmistamaan 
+	tietoturvan eri tiedonsiirto- ja tiedonkäsittelyprosesseissa.
+
+	Tiedon siirrossa salaus auttaa estämään tiedon urkinnan ja varmistamaan sen luottamuksellisuuden. 
+	Kun tieto siirretään verkossa, esimerkiksi internetin tai yrityksen sisäisen verkon kautta, 
+	salausmenetelmät mahdollistavat tiedon salaamisen niin, ettei ulkopuoliset henkilöt tai haitalliset 
+	tahot voi lukea tai ymmärtää sitä. Tämä on erityisen tärkeää esimerkiksi verkkopankkitoiminnoissa, 
+	sähköpostiviestien lähettämisessä tai arkaluontoisen yritystiedon jakamisessa.
+
+	Tiedon käsittelyssä salaus auttaa suojamaan tietoa tietokannoissa, pilvipalveluissa ja muissa 
+	järjestelmissä. Salauksen avulla tiedot voidaan säilyttää suojattuina, vaikka fyysisiin 
+	tallennusvälineisiin tai palvelimiin pääsisi käsiksi luvattomasti. Tällainen suojaaminen on 
+	olennainen osa tietoturvastrategiaa ja auttaa ehkäisemään tietovuotoja ja tietomurtoja.
+
+	Menetelmät tarjoavat myös henkilökohtaista yksityisyyden suojaa. Esimerkiksi puhelinviestien, 
+	sähköpostien tai tiedostojen salaaminen voi estää ulkopuolisia henkilöitä pääsemästä käsiksi 
+	henkilökohtaiseen tai arkaluontoiseen tietoon. Tällainen yksityisyyden suojaaminen on erityisen tärkeää,
+	 kun käsitellään henkilökohtaisia tai luottamuksellisia tietoja.
+
+	Salaustekniikoiden soveltaminen tietoturvakäytännöissä auttaa luomaan turvallisemman ympäristön 
+	tiedon siirrolle, tallentamiselle ja käsittelylle. Se auttaa estämään tietovuotoja, tietomurtoja, 
+	identiteettivarkauksia ja muita tietoturvaloukkauksia. Salausmenetelmien jatkuva kehitys on keskeistä 
+	pysyäksemme askeleen edellä tietoturvauhkia ja varmistaaksemme tietojen luottamuksellisuuden ja eheyden.
+ 
+
+Yhteenveto:
+
+
+	Soveltaminen tietoliikenteessä ja tallennuksessa on tärkeä osa tietoturvan varmistamista. Tietoliikenteen 
+	salaamisella pyritään estämään luvaton pääsy ja tietojen paljastuminen siirrettäessä niitä verkossa. 
+	Tietokantojen salaamisella puolestaan suojataan tallennettuja tietoja varkaudelta ja luvattomalta 
+	käytöltä. Salausmenetelmät voivat kohdistua eri tasoille, kuten koko tietokantaan, taulukoihin, 
+	sarakkeisiin tai yksittäisiin tietueisiin.
+
+	Tiedon salaaminen tapahtuu salausalgoritmin avulla, joka muuttaa tiedon salaiseen muotoon. Salausta 
+	avaimella käyttäen tiedon muuttaminen epäluettavaksi muille kuin valtuutetuille käyttäjille. Tietokantojen 
+	salaamisessa voidaan toteuttaa kokonaisen tietokannan salaus, jossa koko tietokanta on salattu ja sen 
+	sisältöä ei ole mahdollista lukea ilman asianmukaista salausta ja purkamista. Vaihtoehtoisesti voidaan 
+	salata tietokannan taulukot tai sarakkeet, jolloin vain valitut tiedot ovat salattuja.
+
+	Tekniikoiden käyttö tiedon tallennuksessa auttaa suojaamaan tallennetun tiedon luvattomalta käytöltä, 
+	varkaudelta tai paljastumiselta. Tämä voi olla erityisen tärkeää tilanteissa, joissa fyysinen pääsy 
+	tallennusvälineisiin on mahdollista. Yleisimpiä salaustekniikoita tiedon tallennuksessa ovat tiedoston 
+	salaaminen, tietokannan salaus, kansiotason salaaminen, levytason salaaminen ja tiedon anonymisointi.
+
+	Tietokantojen salauksessa voidaan käyttää erilaisia menetelmiä ja käytäntöjä. Koko tietokannan 
+	salaus tarjoaa vahvan suojan, mutta voi vaikuttaa suorituskykyyn. Osittainen tietokannan salaus voi 
+	olla hyödyllinen, kun vain tietyt tiedot vaativat erityistä suojaa. Saraketasoisessa salauksessa 
+	tietokannan taulujen sarakkeet salataan erikseen, mikä auttaa suojaamaan herkkiä tietoja.
