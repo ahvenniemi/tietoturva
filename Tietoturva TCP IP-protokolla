@@ -66,32 +66,41 @@ TCP/IP-protokollapaketti käsittää ja miten se toimii:
 	mahdollistaen tiedonsiirron Internetissä. Tässä on yleiskatsaus tärkeimmistä 
 	protokollista ja niiden toiminnasta TCP/IP-protokollapaketissa:
 
-	Internet Protocol (IP): IP on keskeinen protokolla TCP/IP-paketissa. Se 
-	määrittelee osoitteistuksen ja reitityksen, joka mahdollistaa tietopakettien 
-	lähettämisen ja vastaanottamisen verkossa. IP-protokolla jakaa tiedot pienempiin 
-	paketteihin, jotka sisältävät lähettäjän ja vastaanottajan IP-osoitteet sekä muita 
-	tarvittavia tietoja.
+	Internet Protocol (IP): 
+	
+	IP on keskeinen protokolla TCP/IP-paketissa. Se määrittelee osoitteistuksen ja 
+	reitityksen, joka mahdollistaa tietopakettien lähettämisen ja vastaanottamisen 
+	verkossa. IP-protokolla jakaa tiedot pienempiin paketteihin, jotka sisältävät 
+	lähettäjän ja vastaanottajan IP-osoitteet sekä muita tarvittavia tietoja.
 
-	Transmission Control Protocol (TCP): TCP on toinen tärkeä protokolla TCP/IP-paketissa. 
-	Se tarjoaa luotettavan tiedonsiirron, joka takaa, että tiedot saapuvat oikeassa 
-	järjestyksessä ja ilman vikoja vastaanottajalle. TCP käyttää kolmikätistä kättäelyä 
-	yhteyden luomiseksi lähettäjän ja vastaanottajan välille, sekä numerointia, kuittausta 
-	ja uudelleenlähetystä varmistaakseen tiedon eheyden ja toimituksen.
+	Transmission Control Protocol (TCP): 
 
-	User Datagram Protocol (UDP): UDP on toinen tiedonsiirtoprotokolla TCP/IP-paketissa. 
-	Se tarjoaa epäluotettavan tiedonsiirron, joka on nopeampi mutta ei takaa tiedon eheyttä 
-	ja toimitusta samalla tavalla kuin TCP. UDP-protokolla sopii hyvin tilanteisiin, joissa 
-	nopeus on tärkeämpi kuin luotettavuus, kuten esimerkiksi suoratoistopalveluiden käytössä.
+	TCP on toinen tärkeä protokolla TCP/IP-paketissa. Se tarjoaa luotettavan tiedonsiirron, 
+	joka takaa, että tiedot saapuvat oikeassa järjestyksessä ja ilman vikoja vastaanottajalle. 
+	TCP käyttää kolmikätistä kättäelyä yhteyden luomiseksi lähettäjän ja vastaanottajan välille, 
+	sekä numerointia, kuittausta ja uudelleenlähetystä varmistaakseen tiedon eheyden ja 
+	toimituksen.
 
-	Internet Control Message Protocol (ICMP): ICMP-protokolla tarjoaa välineet verkon 
-	hallintaan, virheiden raportointiin ja reititystiedon päivitykseen. Se käyttää 
-	erilaisia viestejä, kuten ping-viestejä (Echo Request/Reply), virheraportointiviestejä 
-	(Destination Unreachable, Time Exceeded) ja reititysviestejä (Redirect). ICMP 
-	auttaa diagnosoimaan verkon ongelmia ja tarjoaa tiedonvaihdon verkkolaitteiden välillä.
+	User Datagram Protocol (UDP): 
 
-	Internet Protocol version 6 (IPv6): IPv6 on uudempi versio IP-protokollasta, joka on 
-	suunniteltu korvaamaan vanhempi IPv4-protokolla. IPv6 tarjoaa suuremman osoiteavaruuden, 
-	parannetun tietoturvan ja muita ominaisuuksia vastaamaan nykypäivän verkon tarpeita.
+	UDP on toinen tiedonsiirtoprotokolla TCP/IP-paketissa. Se tarjoaa epäluotettavan 
+	tiedonsiirron, joka on nopeampi mutta ei takaa tiedon eheyttä ja toimitusta samalla 
+	tavalla kuin TCP. UDP-protokolla sopii hyvin tilanteisiin, joissa nopeus on tärkeämpi 
+	kuin luotettavuus, kuten esimerkiksi suoratoistopalveluiden käytössä.
+
+	Internet Control Message Protocol (ICMP):
+
+	ICMP-protokolla tarjoaa välineet verkon hallintaan, virheiden raportointiin ja 
+	reititystiedon päivitykseen. Se käyttää erilaisia viestejä, kuten ping-viestejä 
+	(Echo Request/Reply), virheraportointiviestejä (Destination Unreachable, Time Exceeded) 
+	ja reititysviestejä (Redirect). ICMP auttaa diagnosoimaan verkon ongelmia ja tarjoaa 
+	tiedonvaihdon verkkolaitteiden välillä.
+
+	Internet Protocol version 6 (IPv6): 
+
+	IPv6 on uudempi versio IP-protokollasta, joka on suunniteltu korvaamaan vanhempi 
+	IPv4-protokolla. IPv6 tarjoaa suuremman osoiteavaruuden, parannetun tietoturvan 
+	ja muita ominaisuuksia vastaamaan nykypäivän verkon tarpeita.
 	
 	
 IP-protokollan tarkoitus ja tehtävät:
@@ -131,10 +140,11 @@ IP-protokollan tarkoitus ja tehtävät:
 
 	Versiot: 
 	
-	IP-protokolla on kaksi pääversiota: IPv4 ja IPv6. IPv4 on vanhempi versio, joka käyttää 
-	32-bittisiä IP-osoitteita. IPv6 on uudempi versio, joka käyttää 128-bittisiä IP-osoitteita 
-	ja tarjoaa suuremman osoiteavaruuden. IPv6 otettiin käyttöön vastaamaan kasvavaan 
-	IP-osoitteiden tarpeeseen.
+	IP-protokolla on kaksi pääversiota: 
+
+	IPv4 ja IPv6. IPv4 on vanhempi versio, joka käyttää 32-bittisiä IP-osoitteita. IPv6 on 
+	uudempi versio, joka käyttää 128-bittisiä IP-osoitteita ja tarjoaa suuremman osoiteavaruuden. 
+	IPv6 otettiin käyttöön vastaamaan kasvavaan IP-osoitteiden tarpeeseen.
 	
 
 IPv4- ja IPv6-versioiden erot ja ominaisuudet:
@@ -251,8 +261,8 @@ TCP-protokollan toiminta ja sen rooli luotettavan tiedonsiirron varmistamisessa:
 
 	TCP käyttää käsikirjoituspohjaista tiedonsiirtomenetelmää. Se tarkoittaa, 
 	että lähettävä ja vastaanottava osapuoli vaihtavat käsikirjoituspohjaisia 
-	viestejä, joissa vahvistetaan pakettien vastaanotto ja pyydetään uudelleenlähetystä, 
-	jos paketit katoavat tai vaurioituvat matkalla.
+	viestejä, joissa vahvistetaan pakettien vastaanotto ja pyydetään 
+	uudelleenlähetystä, jos paketit katoavat tai vaurioituvat matkalla.
 
 
 TCP käyttää seuraavia mekanismeja varmistaakseen luotettavan tiedonsiirron:
