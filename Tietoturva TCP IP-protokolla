@@ -430,7 +430,8 @@ UDP:n yksinkertaisempi luonne verrattuna TCP:hen:
 	UDP:llä voi olla etuja nopeudessa ja tehokkuudessa, mutta sovelluskehittäjän on 
 	otettava vastuu tiedon eheyden ja luotettavuuden varmistamisesta sovellustasolla, 
 	jos ne ovat tarpeellisia.
-	
+
+
 UDP-pakettien lähettäminen ja vastaanottaminen:
 	
 	
