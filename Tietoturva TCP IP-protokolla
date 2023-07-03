@@ -1,0 +1,785 @@
+Security in the TCP/IP Protocol Suite 
+
+
+Analysis and Countermeasures FIN
+
+
+Johdanto:
+
+	TCP/IP-protokollapaketti on Internetin perusta, joka koostuu IP- ja TCP-protokollista. 
+	IP vastaa tiedonsiirrosta, osoitteistuksesta ja reitityksestä, kun taas TCP takaa 
+	luotettavan tiedonsiirron. Tämä protokollapaketti mahdollistaa Internetin toiminnan, 
+	kuten tiedon jakamisen, kommunikaation ja palveluiden käytön. TCP/IP-protokollapaketti 
+	on keskeinen tekijä Internetin globaalissa toiminnassa.
+
+
+TCP/IP-protokollapaketin merkitys ja rooli Internetin perustana:
+
+	TCP/IP-protokollapaketti on Internetin perusta ja keskeinen tekijä sen toiminnassa. 
+	Se koostuu kahdesta pääprotokollasta: Internet Protocol (IP) ja Transmission Control 
+	Protocol (TCP). Näiden protokollien yhdistelmä mahdollistaa tehokkaan ja luotettavan 
+	tiedonsiirron Internetissä.
+	
+
+TCP/IP-protokollapaketin merkitys voidaan hahmottaa seuraavilla tavoilla:
+
+	Verkkoviestinnän mahdollistaminen: TCP/IP-protokollapaketti tarjoaa perustan 
+	verkkoviestinnälle. Se mahdollistaa eri laitteiden ja tietokonejärjestelmien 
+	välisen kommunikaation Internetissä. Protokollapaketti määrittelee säännöt ja 
+	standardit, joiden avulla laitteet voivat vaihtaa tietoa toistensa kanssa.
+
+	Pakettikytkentäinen tiedonsiirto: TCP/IP hyödyntää pakettikytkentäistä tiedonsiirtoa. 
+	Tiedot jaetaan pienempiin paketteihin, jotka kulkevat eri reittejä verkossa. Tämä 
+	mahdollistaa tehokkaan tiedonsiirron eri verkkosegmenttien välillä.
+
+	Luotettava tiedonsiirto: TCP-protokolla vastaa luotettavasta tiedonsiirrosta 
+	TCP/IP-protokollapaketissa. Se varmistaa, että tieto saapuu oikeassa järjestyksessä 
+	ja ilman vikoja vastaanottajalle. TCP käyttää erilaisia mekanismeja, kuten numerointia, 
+	kuittausta ja uudelleenlähetystä, varmistaakseen tiedon eheyden ja toimituksen.
+
+	Verkon hallinta ja reititys: TCP/IP-protokollapaketti sisältää myös muita protokollia, 
+	kuten Internet Control Message Protocol (ICMP), joka mahdollistaa verkon hallinnan, 
+	virheiden raportoinnin ja reititystiedon päivityksen. ICMP-viestien avulla voidaan 
+	tarkistaa verkon tila, diagnosoida ongelmia ja reitittää tietoa oikeille poluille.
+
+	Yhteensopivuus eri järjestelmien välillä: TCP/IP on standardi protokollapaketti, 
+	jota käytetään laajalti eri järjestelmissä ja laitteissa. Se mahdollistaa eri 
+	tietokoneiden ja verkkojen yhteensopivuuden, mikä on olennaista Internetin toiminnalle. 
+	TCP/IP-protokollapaketti toimii perustana monille sovelluksille ja palveluille, kuten 
+	web-selaimille, sähköpostille, tiedostojen jakamiselle ja etäyhteyksille.
+	
+
+TCP/IP-protokollapaketti käsittää ja miten se toimii:
+
+	TCP/IP-protokollapaketti koostuu useista protokollista, jotka toimivat yhdessä 
+	mahdollistaen tiedonsiirron Internetissä. Tässä on yleiskatsaus tärkeimmistä 
+	protokollista ja niiden toiminnasta TCP/IP-protokollapaketissa:
+
+	Internet Protocol (IP): IP on keskeinen protokolla TCP/IP-paketissa. Se 
+	määrittelee osoitteistuksen ja reitityksen, joka mahdollistaa tietopakettien 
+	lähettämisen ja vastaanottamisen verkossa. IP-protokolla jakaa tiedot pienempiin 
+	paketteihin, jotka sisältävät lähettäjän ja vastaanottajan IP-osoitteet sekä muita 
+	tarvittavia tietoja.
+
+	Transmission Control Protocol (TCP): TCP on toinen tärkeä protokolla TCP/IP-paketissa. 
+	Se tarjoaa luotettavan tiedonsiirron, joka takaa, että tiedot saapuvat oikeassa 
+	järjestyksessä ja ilman vikoja vastaanottajalle. TCP käyttää kolmikätistä kättäelyä 
+	yhteyden luomiseksi lähettäjän ja vastaanottajan välille, sekä numerointia, kuittausta 
+	ja uudelleenlähetystä varmistaakseen tiedon eheyden ja toimituksen.
+
+	User Datagram Protocol (UDP): UDP on toinen tiedonsiirtoprotokolla TCP/IP-paketissa. 
+	Se tarjoaa epäluotettavan tiedonsiirron, joka on nopeampi mutta ei takaa tiedon eheyttä 
+	ja toimitusta samalla tavalla kuin TCP. UDP-protokolla sopii hyvin tilanteisiin, joissa 
+	nopeus on tärkeämpi kuin luotettavuus, kuten esimerkiksi suoratoistopalveluiden käytössä.
+
+	Internet Control Message Protocol (ICMP): ICMP-protokolla tarjoaa välineet verkon 
+	hallintaan, virheiden raportointiin ja reititystiedon päivitykseen. Se käyttää 
+	erilaisia viestejä, kuten ping-viestejä (Echo Request/Reply), virheraportointiviestejä 
+	(Destination Unreachable, Time Exceeded) ja reititysviestejä (Redirect). ICMP 
+	auttaa diagnosoimaan verkon ongelmia ja tarjoaa tiedonvaihdon verkkolaitteiden välillä.
+
+	Internet Protocol version 6 (IPv6): IPv6 on uudempi versio IP-protokollasta, joka on 
+	suunniteltu korvaamaan vanhempi IPv4-protokolla. IPv6 tarjoaa suuremman osoiteavaruuden, 
+	parannetun tietoturvan ja muita ominaisuuksia vastaamaan nykypäivän verkon tarpeita.
+	
+	
+IP-protokollan tarkoitus ja tehtävät:
+	
+	Internet Protocol (IP) on keskeinen protokolla TCP/IP-protokollapaketissa. Sen 
+	tarkoituksena on mahdollistaa tiedonsiirto verkossa, määritellä osoitteistusjärjestelmä 
+	ja hoitaa reititys. IP-protokolla suorittaa useita tehtäviä varmistaakseen tehokkaan 
+	ja oikean tiedonsiirron Internetissä:
+
+	Osoitteistus: 
+	
+	IP-protokolla määrittelee ainutlaatuiset IP-osoitteet kaikille tietoverkon laitteille. 
+	IP-osoite koostuu neljästä oktetista (esimerkiksi 192.168.0.1), jotka tunnistavat laitteen 
+	sijainnin ja verkossa olevan sijainnin. IP-osoitteet mahdollistavat laitteiden tunnistamisen 
+	ja viestien oikean toimituksen oikealle vastaanottajalle.
+
+	Paketointi: 
+	
+	IP-protokolla jakaa tiedot pienempiin paketteihin, joita kutsutaan IP-paketeiksi. 
+	Paketointi mahdollistaa tiedon jakamisen useiden reittien ja verkkosegmenttien välillä. 
+	Jokaisessa IP-paketissa on lähettäjän ja vastaanottajan IP-osoitteet, joiden avulla paketit 
+	voidaan ohjata oikeille reiteille verkossa.
+
+	Reititys: 
+	
+	IP-protokolla vastaa tiedon reitityksestä verkossa. Reititys tarkoittaa tiedon ohjaamista 
+	lähettäjältä vastaanottajalle useiden verkkolaitteiden, kuten reitittimien, välityksellä. 
+	IP-protokolla käyttää reititystauluja ja algoritmeja määrittämään, miten paketit liikkuvat 
+	verkossa ja löytävät oikean reitin määränpäähänsä.
+
+	Verkkokerroksen protokolla: 
+	
+	IP toimii verkkokerroksen protokollana TCP/IP-paketissa. Se tarkoittaa, että IP-protokolla 
+	käsittelee tietoa verkkokerroksella, joka on toiseksi alin kerros ISO/OSI-mallissa. 
+	IP-protokolla vastaa tiedon siirrosta eri verkkosegmenttien ja verkkolaitteiden välillä.
+
+	Versiot: 
+	
+	IP-protokolla on kaksi pääversiota: IPv4 ja IPv6. IPv4 on vanhempi versio, joka käyttää 
+	32-bittisiä IP-osoitteita. IPv6 on uudempi versio, joka käyttää 128-bittisiä IP-osoitteita 
+	ja tarjoaa suuremman osoiteavaruuden. IPv6 otettiin käyttöön vastaamaan kasvavaan 
+	IP-osoitteiden tarpeeseen.
+	
+
+IPv4- ja IPv6-versioiden erot ja ominaisuudet:
+	
+
+	IPv4 (Internet Protocol version 4) ja IPv6 (Internet Protocol version 6) ovat kaksi 
+	erilaista versiota Internet Protocol (IP) -protokollasta. Tässä on joitain IPv4:n 
+	ja IPv6:n välisiä eroja ja ominaisuuksia
+
+	Osoitteen pituus: 
+	
+	IPv4 käyttää 32-bittisiä osoitteita, kun taas IPv6 käyttää 128-bittisiä osoitteita. 
+	Tämä mahdollistaa huomattavasti suuremman osoitetilan IPv6:ssa.
+
+	Osoitekapasiteetti: 
+
+	IPv4 tukee noin 4,3 miljardia (2^32) uniikkia osoitetta, kun taas IPv6:ssa on 
+	teoreettisesti noin 3,4 × 10^38 (2^128) mahdollista osoitetta. Tämä vastaa käytännössä 
+	lähes rajatonta osoitekapasiteettia IPv6:ssa.
+
+	Adressinmuodostus: 
+
+	IPv4:ssä osoitteet määritellään yleensä käsin tai DHCP (Dynamic Host Configuration Protocol) 
+	protokollan avulla. IPv6:ssa osoitteet voidaan muodostaa automaattisesti käyttämällä ICMPv6 
+	Neighbor Discovery -protokollaa ja link-local -osoitteita.
+
+	Laajennukset ja parannukset: 
+
+	IPv6:ssa on useita parannuksia verrattuna IPv4:ään, kuten suurempi osoitetila, parempi 
+	tuki turvallisuudelle, sisäänrakennettu laitteiden automaattinen konfiguraatio ja parempi 
+	tuki mobiililaitteille.
+
+	Yhteensopivuus: 
+
+	IPv4 ja IPv6 eivät ole täysin yhteensopivia keskenään. IPv6 on suunniteltu tukemaan 
+	IPv4-yhteensopivuutta erilaisten siirtymätekniikoiden, kuten Dual Stack, Tunneling ja 
+	Translation, avulla.
+
+	Käytön leviäminen: 
+
+	Vaikka IPv4 on ollut pitkään käytössä ja on yhä laajalti käytetty, IPv6:n käyttöönotto 
+	on kasvamassa vähitellen, kun osoitteiden loppuminen IPv4:ssä tulee ongelmaksi.
+	
+
+IP-osoitteiden ja aliverkkojen merkitys IP-protokollassa:
+
+	IP-protokolla käyttää IP-osoitteita ja aliverkkoja verkkojen identifioimiseen 
+	ja reitittämiseen. Tässä on selitys näiden käsitteiden merkityksestä IP-protokollassa
+
+	IP-osoitteet: 
+	
+	IP-osoitteet ovat ainutlaatuisia numerokoodeja, joita käytetään verkkolaitteiden, 
+	kuten tietokoneiden, palvelimien ja reitittimien, tunnistamiseen verkossa. Ne toimivat 
+	samalla tavalla kuin postinumerot, jotka määrittävät tietyn sijainnin. IP-osoitteet 
+	mahdollistavat tietoliikenteen lähettämisen ja vastaanottamisen eri verkkolaitteiden 
+	välillä Internetissä.
+
+	Aliverkot: 
+	
+	IP-osoitteet jaetaan aliverkkoihin, jotta verkkoliikennettä voidaan tehokkaasti 
+	hallita ja reitittää. Aliverkkomaski määrittää, kuinka monta bittiä IP-osoitteesta 
+	varataan verkko-osoitteelle ja kuinka monta bittiä varataan laiteosoitteelle. 
+	Aliverkkomaskin avulla voidaan jakaa IP-osoitteet pienempiin verkko-osoitteisiin, 
+	mikä helpottaa verkon hallintaa ja reititystä.
+
+	Esimerkiksi, jos IP-osoite on 192.168.1.10 ja aliverkkomaski on 255.255.255.0, 
+	tämä tarkoittaa, että ensimmäiset 24 bittiä (255.255.255.0 binäärimuodossa) varataan 
+	verkko-osoitteelle, ja viimeiset 8 bittiä varataan laiteosoitteelle. Tämä tarkoittaa, 
+	että kyseessä on aliverkko 192.168.1.0, ja siinä voi olla 256 laitetta (2^8).
+
+	Aliverkkomaskin avulla voidaan määrittää, mitkä laitteet kuuluvat samaan verkkoon 
+	ja voivat kommunikoida suoraan keskenään ilman reitittimen apua. Aliverkot auttavat 
+	myös tehokkaamman liikenteen reitityksen toteuttamisessa verkossa.
+
+	IP-osoitteiden ja aliverkkojen merkitys IP-protokollassa on siis mahdollistaa 
+	verkkolaitteiden tunnistaminen ja liikenteen ohjaus Internetissä. Ne ovat keskeisiä 
+	tekijöitä verkkoliikenteen toiminnassa ja tehokkaan tiedonsiirron mahdollistamisessa.
+	
+
+IP-protokolla reitittää paketteja verkossa:
+
+	IP-protokolla on vastuussa pakettien reitittämisestä verkossa. Kun tietoja lähetetään 
+	Internetissä, ne jaetaan pienempiin paketteihin, joille annetaan lähde- ja 
+	kohde-IP-osoitteet.
+
+	Kun paketti lähetetään lähtöpisteestä, se ohjataan läpi useiden reitittimien, 
+	joiden tehtävänä on ohjata paketti oikeaan suuntaan kohti määränpäätä. Jokainen 
+	reititin tarkastelee paketin IP-otsaketta, josta se saa tarvittavat tiedot paketin 
+	reitittämiseksi. Reititin vertaa paketin määränpään IP-osoitetta omiin 
+	reititystauluihinsa ja ohjaa paketin seuraavalle sopivalle reitittimelle matkalla 
+	kohti määränpäätä.
+
+	Reititin käyttää IP-protokollan reititystietoja, jotka voivat sisältää verkkojen 
+	väliset yhteydet, reittiprotokollat ja muut tiedot, jotka auttavat määrittämään, 
+	mikä reitti on optimaalinen paketin toimittamiseksi määränpäähän. Reititystaulut 
+	päivitetään jatkuvasti verkkojen tilanteen ja topologian muutosten perusteella.
+
+	Tämä prosessi jatkuu, kunnes paketti saavuttaa määränpääosoitteen ja toimitetaan 
+	perille. IP-protokolla mahdollistaa siis pakettien oikeanohjauksen ja reitittämisen 
+	verkossa, jolloin tieto voi liikkua tehokkaasti eri verkkojen ja reitittimien 
+	läpi kohti tarkoitettua kohdetta.
+	
+
+TCP-protokolla (Transmission Control Protocol)
+
+
+TCP-protokollan toiminta ja sen rooli luotettavan tiedonsiirron varmistamisessa:
+
+	TCP-protokolla on vastuussa luotettavan tiedonsiirron varmistamisesta verkossa. 
+	Se tarjoaa mekanismit, jotka takaavat, että tieto siirtyy luotettavasti ja 
+	virheettömästi lähettäjältä vastaanottajalle.
+
+	TCP käyttää käsikirjoituspohjaista tiedonsiirtomenetelmää. Se tarkoittaa, 
+	että lähettävä ja vastaanottava osapuoli vaihtavat käsikirjoituspohjaisia 
+	viestejä, joissa vahvistetaan pakettien vastaanotto ja pyydetään uudelleenlähetystä, 
+	jos paketit katoavat tai vaurioituvat matkalla.
+
+
+TCP käyttää seuraavia mekanismeja varmistaakseen luotettavan tiedonsiirron:
+
+	Pakettien numerointi: 
+	
+	Jokainen TCP-paketti varustetaan numerolla, joka ilmaisee sen järjestyksen 
+	sekä kertoo vastaanottajalle puuttuvien tai uudelleenlähetettävien pakettien 
+	tilan.
+
+	Vahvistusviestit: 
+	
+	Vastaanottaja lähettää vahvistusviestejä lähettäjälle, jotta tämä tietää, 
+	että paketit on vastaanotettu oikein. Jos lähettäjä ei saa vahvistusta 
+	tietyn ajan kuluessa, se lähettää paketin uudelleen.
+
+	Puskurointi: 
+	
+	TCP käyttää puskureita, joissa tiedot tallennetaan väliaikaisesti ennen 
+	niiden lähettämistä. Puskurit mahdollistavat pakettien järjestämisen, 
+	virheiden korjaamisen ja tietovirran hallinnan.
+
+	Tiedon eheyden tarkistus: 
+	
+	TCP käyttää tarkistussummaa varmistaakseen, että vastaanotettu data 
+	ei ole vaurioitunut matkalla. Jos tarkistussumma ei täsmää, paketti 
+	lähetetään uudelleen.
+
+	Ruuhkienhallinta: 
+	
+	TCP seuraa verkossa esiintyvää ruuhkaa ja säätää tiedonsiirtonopeuttaan 
+	vastaavasti. Tämä auttaa välttämään verkkojen ylikuormitusta ja parantaa 
+	tiedonsiirron tehokkuutta.
+
+	TCP-protokollan toiminta varmistaa, että tiedot siirtyvät luotettavasti, 
+	järjestyksessä ja virheettömästi lähettäjältä vastaanottajalle. Se on 
+	olennainen osa sovelluskerroksen protokollia, kuten HTTP (HyperText Transfer 
+	Protocol), jota käytetään esimerkiksi verkkosivujen lataamiseen. TCP 
+	mahdollistaa luotettavan tiedonsiirron Internetin kautta ja takaa, 
+	että tieto välittyy oikein ja täydellisenä.
+	
+	
+TCP-yhteyden muodostaminen, tiedonsiirto ja purkaminen:
+
+	TCP-yhteyden muodostaminen, tiedonsiirto ja purkaminen muodostavat kolme 
+	vaihetta TCP-protokollan käytössä luotettavan tiedonsiirron varmistamiseksi. 
+	Näitä vaiheita kutsutaan myös "kolmen kädenpuristuksen" protokollaksi.
+
+	Yhteyden muodostaminen:
+	
+	a) Lähettävä osapuoli lähettää SYN-paketin (synchronization) vastaanottajalle, 
+	   ilmaisten halunsa muodostaa yhteys.
+	
+	b) Vastaanottava osapuoli vastaa SYN-ACK-paketilla (synchronization-acknowledgment), 
+	   joka ilmaisee halukkuuden muodostaa yhteys ja vahvistaa SYN-paketin vastaanoton.
+
+	c) Lähettävä osapuoli lähettää ACK-paketin (acknowledgment), jolla se vahvistaa 
+	   SYN-ACK-paketin vastaanoton. Tässä vaiheessa yhteys on muodostettu.
+
+	Tiedonsiirto:
+	
+	a) Lähettävä osapuoli jakaa dataa pienempiin paloihin (segmentteihin) ja lähettää 
+	   ne TCP-paketeissa vastaanottavalle osapuolelle.
+
+	b) Vastaanottava osapuoli vastaanottaa paketit ja lähettää vahvistusviestejä (ACK) 
+	   lähettäjälle osoittaakseen, että paketit on vastaanotettu oikein.
+
+	c) Jos lähettävä osapuoli ei saa ACK-vahvistusta tietyn ajan kuluessa, se lähettää 
+	   paketit uudelleen.
+
+	Yhteyden purkaminen:
+	
+	a) Lähettävä osapuoli lähettää FIN-paketin (finish), joka ilmaisee halunsa lopettaa 
+	   yhteys.
+	   
+	b) Vastaanottava osapuoli vastaa ACK-paketilla vahvistaen FIN-paketin vastaanoton.
+
+	c) Vastaanottava osapuoli lähettää myös FIN-paketin lähettävälle osapuolelle 
+	   ilmaisten halunsa lopettaa yhteys.
+	
+	d) Lähettävä osapuoli vastaa ACK-paketilla vahvistaen FIN-paketin vastaanoton. 
+	   Tässä vaiheessa yhteys on suljettu.
+
+	Tiedonsiirto TCP-protokollan avulla tapahtuu luotettavasti ja järjestyksessä. 
+	Lähettävä ja vastaanottava osapuoli vaihtavat paketteja, ja vahvistusviestit 
+	varmistavat, että paketit saapuvat perille ja ovat eheitä. Yhteydenmuodostus- 
+	ja purkamisvaiheet takaavat, että tiedonsiirto tapahtuu hallitusti ja että 
+	molemmat osapuolet ovat tietoisia yhteyden tilasta.
+
+	Toimintaperiaatteet mahdollistavat luotettavan tiedonsiirron sovellusten välillä, 
+	kuten web-sivujen lataamisen, tiedostojen siirtämisen ja sähköpostiviestien 
+	välittämisen. Protokolla huolehtii siitä, että tiedot siirtyvät oikein ja että 
+	yhteys on turvallinen ja tehokas.
+	
+	
+TCP:n tärkeimmät ominaisuudet
+
+
+	TCP (Transmission Control Protocol) on luotettava kuljetusprotokolla, 
+	joka tarjoaa useita tärkeitä ominaisuuksia tiedonsiirron varmistamiseksi
+
+	Luotettavuus: 
+	
+	TCP takaa tiedonsiirron luotettavuuden varmistamalla, että kaikki 
+	lähettäjän lähettämät tiedot saapuvat vastaanottajalle oikeassa järjestyksessä 
+	ja ilman vääristymiä. Tämä saavutetaan käyttämällä sekvenssinumeroita ja 
+	vahvistusviestejä (ACK), joiden avulla lähettäjä voi seurata pakettien tilaa 
+	ja varmistaa niiden oikean vastaanoton.
+
+	Virheenkorjaus: 
+	
+	TCP sisältää mekanismin virheenkorjaukseen tiedonsiirron aikana. Se käyttää 
+	tarkistussummaa pakettien eheyden tarkistamiseen. Jos paketti havaitaan 
+	vioittuneeksi, vastaanottaja pyytää lähettäjää lähettämään paketin uudelleen. 
+	Tämä takaa, että vääristyneet tai menetetyt paketit korjataan ja toimitetaan 
+	oikein.
+
+	Virtaohjaus: 
+	
+	TCP varmistaa, että tiedonsiirto tapahtuu tasapainossa vastaanottajan ja lähettäjän 
+	välillä. Virtaohjausmekanismi estää ylikuormitusta vastaanottajalla tai verkossa. 
+	Lähettäjä seuraa vastaanottajan puskurin tilaa ja säätää tiedonsiirtonopeutta sen 
+	mukaisesti. Tämä estää tiedon menetyksen ja takaa tehokkaan tiedonsiirron.
+
+	Ominaisuudet tekevät TCP:stä sopivan protokollan sovelluksiin, joissa vaaditaan 
+	luotettavaa tiedonsiirtoa, kuten verkkosivujen lataamiseen, tiedostojen siirtoon 
+	ja reaaliaikaiseen videostreamaukseen.	
+	
+UDP-protokolla (User Datagram Protocol)
+
+
+UDP-protokollan ominaisuudet ja tarkoitus:
+
+
+	UDP (User Datagram Protocol) on epäluotettava kuljetusprotokolla, joka tarjoaa 
+	yksinkertaisen ja kevyen tiedonsiirtomekanismin. Se eroaa TCP:stä seuraavilla 
+	ominaisuuksilla
+
+	Epäluotettavuus: 
+	
+	UDP ei tarjoa luotettavaa tiedonsiirtoa, mikä tarkoittaa, että se ei takaa 
+	pakettien oikeaa järjestystä, eheyttä tai toimitusta. UDP-paketit voivat 
+	kadota, tulla vääristyneiksi tai toimitetaan epäjärjestyksessä ilman 
+	korjausmekanismeja.
+
+	Puskurointi ja virheenkorjaus: 
+	
+	UDP ei käytä puskurointia tai virheenkorjausta pakettien välityksessä. 
+	Jos paketti vioittuu tai katoaa, vastaanottaja ei pyydä uudelleenlähetystä, 
+	lähettäjä ei suorita korjausoperaatioita.
+
+	Nopeat tiedonsiirto-ominaisuudet: 
+	
+	UDP on nopeampi kuin TCP, koska se ei sisällä monimutkaisia virheenkorjaus- 
+	ja virtaohjausmekanismeja. Tämä tekee siitä sopivan sovelluksiin, joissa 
+	nopea tiedonsiirto on tärkeämpää kuin tiedon eheys tai luotettavuus.
+
+	UDP-protokollaa käytetään yleisesti sovelluksissa, joissa nopea tiedonsiirto 
+	ja pieni viive ovat tärkeitä. Tällaisia sovelluksia voivat olla reaaliaikainen 
+	videostreamaus, online-pelit, DNS-palvelimet ja hajautetut tiedostojärjestelmät. 
+	Mahdollistaa yksinkertaisen ja tehokkaan tiedonsiirron näissä sovelluksissa, 
+	mutta sovellustasolla on otettava huomioon epäluotettavuus ja tarvittavat 
+	virheenhallintatoimenpiteet.
+	
+UDP:n yksinkertaisempi luonne verrattuna TCP:hen:	
+
+
+	UDP (User Datagram Protocol) on yksinkertaisempi kuljetusprotokolla 
+	verrattuna TCP:hen seuraavilla tavoilla
+
+	Yhteysorientoituneisuus: UDP ei vaadi ennalta määriteltyä yhteydenmuodostusvaihetta 
+	kuten TCP. Se lähettää ja vastaanottaa paketteja ilman virtuaalista yhteyttä. Tämä 
+	tekee UDP:stä kevyemmän ja nopeamman protokollan.
+
+	Luotettava tiedonsiirto: 
+	
+	UDP ei takaa luotettavaa tiedonsiirtoa. Se ei käytä pakettien numerointia, 
+	kuittausten seurantaa tai uudelleenlähetysmekanismeja. Tämä tarkoittaa, että 
+	paketit voivat kadota, saapua epäjärjestyksessä tai vääristyneinä ilman 
+	korjaustoimia.
+
+	Puskurointi tai virtaohjaus: 
+	
+	UDP ei puskuroi tai hallitse pakettivirtaa samalla tavalla kuin TCP. Se 
+	lähettää paketit välittömästi, kun ne ovat käytettävissä, ja voi aiheuttaa 
+	ruuhkia tai tukoksia verkossa, jos liikennettä ei hallita asianmukaisesti 
+	sovellustasolla.
+
+	Ei sovellu sovelluksiin, joissa pieni viive ja yksinkertainen tiedonsiirto 
+	ovat tärkeitä. Esimerkkejä UDP:n käyttökohteista ovat reaaliaikainen 
+	videostreamaus, DNS-kyselyt, DHCP-palvelimet ja yksinkertaiset tiedonsiirtoalustat. 
+	UDP:llä voi olla etuja nopeudessa ja tehokkuudessa, mutta sovelluskehittäjän on 
+	otettava vastuu tiedon eheyden ja luotettavuuden varmistamisesta sovellustasolla, 
+	jos ne ovat tarpeellisia.
+	
+UDP-pakettien lähettäminen ja vastaanottaminen:
+	
+	
+UDP-pakettien lähettäminen:
+
+	Luo UDP-paketin, joka sisältää tarvittavat tiedot, kuten lähde- ja kohdeportit 
+	sekä tietoja, jotka haluat lähettää.
+
+	Määritä vastaanottavan osapuolen IP-osoite ja porttinumero.
+	
+	Avaa UDP-yhteys lähettävällä laitteella.
+
+	Lähetä UDP-paketti vastaanottavan osapuolen IP-osoitteeseen ja porttinumeroon 
+	käyttäen UDP-protokollan tarjoamaa lähetysmekanismia.
+
+	Vastaanottaminen:
+
+	Avaa UDP-yhteys vastaanottavalla laitteella tiettyyn porttiin, johon haluat 
+	vastaanottaa UDP-paketteja.
+	
+	Odota saapuvia UDP-paketteja määritetylle portille.
+
+	UDP-paketti saapuu, vastaanottava laite käsittelee paketin tiedot ja suorittaa 
+	tarvittavat toimenpiteet sovellustasolla.
+
+	UDP-pakettien lähettäminen ja vastaanottaminen on suoraviivaista, koska UDP 
+	ei vaadi yhteydenmuodostusta tai kuittausten seurantaa. Paketit voidaan lähettää 
+	ja vastaanottaa ilman ennalta määriteltyä järjestystä tai varmistusta niiden 
+	eheydestä. Tämä tekee UDP:stä hyödyllisen protokollan sovelluksissa, joissa 
+	pieni viive on tärkeämpää kuin luotettavuus, kuten reaaliaikaisessa viestinnässä 
+	tai suoratoistopalveluissa.
+	
+
+ICMP (Internet Control Message Protocol)
+
+ICMP:n roolit:
+
+
+	ICMP (Internet Control Message Protocol) on protokolla, joka kuuluu Internet-
+	protokollapakettiin. Sen pääasialliset roolit ovat verkkojen hallinta, virheiden 
+	raportointi ja diagnostiikka.
+
+	Hallinta: 
+	
+	ICMP tarjoaa työkaluja verkkojen hallintaan ja valvontaan. Se mahdollistaa 
+	viestinnän verkkojen laitteiden välillä ja tarjoaa toimintoja, kuten reititystiedon 
+	päivitys ja verkkoyhteyden tilan tarkistus.
+
+	Virheiden raportointi: 
+	
+	ICMP-viestit käytetään virheiden ja poikkeustilanteiden raportointiin verkossa. 
+	Esimerkiksi, jos tietokone yrittää lähettää paketin kohdeosoitteeseen, johon ei 
+	ole reittiä, ICMP-viesti lähetetään takaisin lähettävälle laitteelle ilmoittamaan 
+	virheestä.
+
+	Diagnostiikka: 
+	
+	ICMP-viestejä käytetään myös verkon diagnostiikkaan. Ne voivat sisältää tietoja, 
+	kuten ping-ajat (viestin kulun aika), joiden avulla voidaan testata verkon 
+	toimivuutta ja viiveitä. Lisäksi ICMP-viestit voivat sisältää tietoja verkon 
+	suorituskyvystä ja mahdollisista virheilmoituksista, jotka auttavat vianmäärityksessä.
+
+	ICMP:n avulla verkkojen ylläpitäjät ja asiantuntijat voivat seurata verkon tilaa, 
+	havaita virheitä ja suorittaa diagnostiikkaa. Se on tärkeä työkalu verkkojen 
+	hallinnassa, virheiden raportoinnissa ja diagnostiikassa.
+
+
+ICMP-viestien tarkoitus ja merkitys:
+
+	ICMP-viestit (Internet Control Message Protocol) ovat tärkeä osa Internet-
+	protokollapakettia ja niillä on useita tarkoituksia ja merkityksiä verkkoympäristössä.
+
+	Virheiden raportointi: 
+	
+	ICMP-viestit käytetään virheiden ja poikkeustilanteiden raportointiin verkossa. 
+	Ne voivat sisältää tietoja, kuten kohdelaitteen tavoittamattomuuden, reititysongelman 
+	tai palvelun estämisen. Tämä auttaa verkkojen ylläpitäjiä havaitsemaan ja korjaamaan 
+	verkossa esiintyviä ongelmia.
+
+	Ping-viestit: 
+	
+	ICMP-viestejä käytetään myös ping-toiminnossa, joka on yleinen menetelmä testata 
+	verkkojen toimivuutta ja viiveitä. Ping-viestillä lähetetään pyyntö kohdelaitteelle 
+	ja odotetaan vastausta. Ping-ajat (viestin kulkuaika) antavat tietoa verkon viiveistä 
+	ja suorituskyvystä.
+
+	Reitityksen päivitys: 
+	
+	ICMP-viestit sisältävät myös tietoja reitityksestä. Ne voivat välittää tietoa 
+	reititystauluista, reitin muutoksista ja verkkojen topologian päivityksistä. 
+	Tämä auttaa reitittimiä päivittämään reititystietonsa ja ohjaamaan liikennettä 
+	tehokkaasti.
+
+	Palvelun estäminen: 
+	
+	ICMP-viestejä käytetään myös palvelun estämiseen hyökkäyksissä, kuten ICMP-tulvissa. 
+	Hyökkääjät voivat lähettää suuren määrän ICMP-pyyntöjä kohdelaitteelle, mikä voi 
+	aiheuttaa resurssien ylikuormituksen ja palveluneston.
+
+	ICMP-viestit ovat olennainen osa verkkojen hallintaa, diagnostiikkaa ja 
+	virheenkorjausta. Ne tarjoavat välineitä verkkojen valvontaan, vianmääritykseen 
+	ja tiedonvaihtoon.
+	
+Yleiset ICMP-viestityyppejä ja niiden käyttötarkoitukset:
+
+
+	ICMP-viestit (Internet Control Message Protocol) ovat tärkeä osa Internet-
+	protokollapakettia ja niillä on useita tarkoituksia ja merkityksiä verkkoympäristössä.
+
+	Virheiden raportointi: 
+	
+	ICMP-viestit käytetään virheiden ja poikkeustilanteiden raportointiin verkossa. 
+	Ne voivat sisältää tietoja, kuten kohdelaitteen tavoittamattomuuden, reititysongelman 
+	tai palvelun estämisen. Tämä auttaa verkkojen ylläpitäjiä havaitsemaan ja korjaamaan 
+	verkossa esiintyviä ongelmia.
+
+	Ping-viestit: 
+	
+	ICMP-viestejä käytetään myös ping-toiminnossa, joka on yleinen menetelmä testata 
+	verkkojen toimivuutta ja viiveitä. Ping-viestillä lähetetään pyyntö kohdelaitteelle 
+	ja odotetaan vastausta. Ping-ajat (viestin kulkuaika) antavat tietoa verkon 
+	viiveistä ja suorituskyvystä.
+
+	Reitityksen päivitys: 
+	
+	ICMP-viestit sisältävät myös tietoja reitityksestä. Ne voivat välittää tietoa 
+	
+	reititystauluista, reitin muutoksista ja verkkojen topologian päivityksistä. 
+	Tämä auttaa reitittimiä päivittämään reititystietonsa ja ohjaamaan liikennettä 
+	tehokkaasti.
+
+	Palvelun estäminen: 
+	
+	ICMP-viestejä käytetään myös palvelun estämiseen hyökkäyksissä, kuten ICMP-tulvissa.
+	Hyökkääjät voivat lähettää suuren määrän ICMP-pyyntöjä kohdelaitteelle, mikä voi 
+	aiheuttaa resurssien ylikuormituksen ja palveluneston.
+
+	ICMP-viestit ovat olennainen osa verkkojen hallintaa, diagnostiikkaa ja virheenkorjausta. 
+	Ne tarjoavat välineitä verkkojen valvontaan, vianmääritykseen ja tiedonvaihtoon.
+
+
+TCP/IP-protokollapaketin käyttö:
+
+
+TCP/IP-protokollapaketti käytännössä:
+
+	TCP/IP-protokollapakettia käytetään käytännössä laajasti Internetin ja muiden 
+	tietoverkkojen viestinnässä. Sitä käytetään tietojen lähettämiseen ja vastaanottamiseen 
+	verkon eri solmujen välillä, kuten tietokoneiden, palvelinten ja reitittimien välillä. 
+	TCP/IP-protokollapaketti mahdollistaa luotettavan tiedonsiirron ja varmistaa, että 
+	tietopaketit saapuvat oikeassa järjestyksessä ja virheettömänä.
+
+	TCP (Transmission Control Protocol) on yksi TCP/IP-protokollapaketin keskeisistä 
+	protokollista. Se tarjoaa luotettavan tiedonsiirron varmistamalla, että tietopaketit 
+	lähetetään ja vastaanotetaan oikein. TCP takaa tiedonsiirron luotettavuuden käyttämällä 
+	pakettien numerointia, vahvistusviestejä ja uudelleenlähetystä, jos paketit katoavat 
+	tai vahingoittuvat matkalla.
+
+	IP (Internet Protocol) on toinen tärkeä TCP/IP-protokollapaketin protokolla. 
+	Se vastaa pakettien reitityksestä verkossa. IP-protokolla määrittää, miten paketit 
+	kulkevat lähtölaitteesta määränpäähän verkon eri solmujen läpi. Se käyttää IP-osoitteita 
+	tunnistamaan solmut ja ohjaamaan paketteja oikeaan suuntaan.
+
+	TCP/IP-protokollapakettia käytetään myös verkkosovellusten toteuttamisessa, 
+	kuten web-selaimissa, sähköpostiohjelmissa ja tiedostojen jakamisessa. Se tarjoaa 
+	perustan verkkoviestinnälle ja mahdollistaa eri tietoverkkojen yhteenliittämisen ja 
+	tiedonvaihdon eri järjestelmien välillä.
+
+	TCP/IP-protokollapaketti on keskeinen osa Internetin ja muiden tietoverkkojen toimintaa. 
+	Se mahdollistaa tietojen lähettämisen ja vastaanottamisen luotettavasti ja tehokkaasti 
+	eri verkkosolmujen välillä.
+
+
+TCP/IP mahdollistaa Internet-yhteyden ja verkkoviestinnän:
+
+	TCP/IP-protokollapaketti on olennainen osa Internet-yhteyksiä ja verkkoviestintää. 
+	Se tarjoaa viitekehyksen, joka mahdollistaa eri tietoverkkojen ja laitteiden 
+	yhteistoiminnan.
+
+	TCP/IP-protokollapaketti koostuu kahdesta tärkeästä protokollasta: Transmission 
+	Control Protocol (TCP) ja Internet Protocol (IP). TCP vastaa luotettavasta 
+	tiedonsiirrosta, kun taas IP hoitaa pakettien reitityksen verkossa.
+
+	TCP/IP-protokollapaketti mahdollistaa tietojen siirron tietokoneiden, palvelinten, 
+	reitittimien ja muiden verkkolaitteiden välillä. Se mahdollistaa tiedonsiirron eri 
+	verkkojen ja verkkosegmenttien välillä, olipa kyseessä lähiverkko (LAN) tai laajempi 
+	verkkoympäristö, kuten Internet.
+
+	Protokollapaketti takaa tiedon luotettavan siirtymisen jakamalla tiedot pienempiin 
+	paketteihin, jotka lähetetään erikseen ja reititetään verkossa. TCP-protokolla 
+	varmistaa, että kaikki paketit saapuvat oikeassa järjestyksessä ja tarvittaessa 
+	lähettäjä lähettää uudelleen puuttuvat tai vahingoittuneet paketit. IP-protokolla 
+	puolestaan ohjaa paketit oikeaan kohteeseen reitittämällä ne verkossa.
+
+	TCP/IP-protokollapaketti mahdollistaa myös erilaisten sovellusten toiminnan 
+	Internetissä. Esimerkiksi verkkoselaimet, sähköpostiohjelmat, pikaviestimet ja 
+	tiedostojen jakamisjärjestelmät käyttävät TCP/IP:tä tietojen lähettämiseen ja 
+	vastaanottamiseen verkon yli.
+	
+	
+TCP/IP:n kanssa web-selaimet, sähköposti ja tiedonsiirto:
+
+	TCP/IP-protokollapaketti on olennainen osa monien sovellusten toimintaa, 
+	jotka käyttävät Internetiä ja verkkoviestintää. Tässä on joitakin esimerkkejä 
+	sovelluksista, jotka käyttävät TCP/IP:tä:
+
+	Verkkoselaimet: 
+	
+	Chrome, Firefox ja Safari, käyttävät TCP/IP:tä kommunikoidakseen verkkosivustojen 
+	palvelinten kanssa. TCP/IP mahdollistaa web-sivujen lataamisen, hyperlinkkien 
+	seuraamisen ja tiedon lähettämisen palvelimille ja vastaanottamisen takaisin 
+	selaimelle.
+
+	Sähköposti:
+	
+	Outlook, Gmail ja Thunderbird, käyttävät TCP/IP:tä lähettääkseen ja 
+	vastaanottaakseen sähköpostiviestejä. TCP/IP-protokollat, kuten SMTP 
+	(Simple Mail Transfer Protocol) ja POP/IMAP (Post Office Protocol/
+	Internet Message Access Protocol), mahdollistavat sähköpostien siirtämisen 
+	palvelinten välillä ja käyttäjien laitteisiin.
+
+	Tiedonsiirto: 
+	
+	TCP/IP:tä käytetään myös tiedonsiirtoon eri sovellusten välillä. Tiedostojen 
+	jakamisessa käytettävä FTP (File Transfer Protocol) ja SSH (Secure Shell) 
+	käyttävät TCP/IP-protokollaa tiedostojen siirtoon palvelimien ja käyttäjien 
+	välillä. Myös verkkopohjainen tiedostojen jakaminen, kuten Dropbox tai Google 
+	Drive, hyödyntää TCP/IP:tä tiedostojen siirtämiseen verkon yli.
+
+
+Tietoturva TCP/IP-ympäristössä:
+
+	TCP/IP-protokollapaketti on keskeinen osa Internetin toimintaa, ja sen 
+	tietoturva on erittäin tärkeä asia. Tässä on joitakin näkökohtia 
+	TCP/IP-protokollapaketin tietoturvasta
+
+	Verkko- ja laite-identiteetin suojaaminen: 
+	
+	TCP/IP-pakettiin liittyvä tietoturva alkaa verkko- ja laite-identiteetin 
+	suojaamisesta. Verkkoissa käytetään yleensä IP-osoitteita ja MAC-osoitteita, 
+	joten on tärkeää varmistaa, että näitä tietoja ei voida helposti väärentää 
+	tai manipuloida. Verkko- ja laite-identiteettien vahvistaminen auttaa estämään 
+	identiteettivarkauksia ja muita hyökkäyksiä.
+
+	Salaus- ja salausprotokollat: 
+	
+	TCP/IP-protokollapaketti ei sisällä sisäänrakennettua salausmekanismia, joten 
+	tiedonsiirron suojaamiseksi on käytettävä erillisiä salaustekniikoita. SSL/TLS 
+	(Secure Sockets Layer/Transport Layer Security) on yleisesti käytetty salausprotokolla, 
+	joka tarjoaa tietoliikenteen salausta ja varmistaa tiedon luottamuksellisuuden 
+	ja eheyden.
+
+	Palomuurit ja reitittimet: 
+	
+	Palomuurit ja reitittimet ovat tärkeitä tietoturvalaitteita TCP/IP-verkoissa. 
+	Palomuurit valvovat liikennettä verkon rajapinnoilla ja estävät ei-toivotun 
+	liikenteen pääsyn verkkoon. Reitittimet ohjaavat liikennettä verkossa ja voivat 
+	suodattaa tai suojata liikennettä tiettyjen sääntöjen perusteella. Näiden 
+	laitteiden oikea konfigurointi ja päivittäminen on tärkeää verkon tietoturvan 
+	kannalta.
+
+	Haavoittuvuuksien hallinta: 
+	
+	TCP/IP-protokollapakettiin liittyy erilaisia haavoittuvuuksia, kuten 
+	tietoliikenteen häirintä, pakettien väärentäminen ja hyökkäykset 
+	protokolla-anomalioiden hyväksikäytön avulla. Tietoturvan kannalta on 
+	tärkeää pysyä ajan tasalla TCP/IP-protokollan haavoittuvuuksista ja seurata 
+	järjestelmätoimittajien tarjoamia päivityksiä ja korjauksia.
+
+	Verkon valvonta ja tunnistaminen: 
+	
+	TCP/IP-verkkojen tietoturvan ylläpitäminen edellyttää jatkuvaa valvontaa 
+	ja tunnistamista. Verkon liikenteen ja tapahtumien seuranta sekä haitallisen 
+	toiminnan havaitseminen ja estäminen ovat tärkeitä osia TCP/IP-verkon tietoturvaa. 
+	Tähän käytetään erilaisia valvontatyökaluja, kuten verkon analysointityökaluja 
+	ja intrusion detection -järjestelmiä.
+	
+
+Yleiset tietoturvariskit ja haavoittuvuudet:
+
+	Tietoturvariskit ja haavoittuvuudet TCP/IP-protokollapaketissa voivat olla 
+	moninaisia ja monenlaisia. Tässä on joitakin yleisiä tietoturvariskejä ja 
+	haavoittuvuuksia, joita TCP/IP-verkoissa voi esiintyä.
+
+	Portti- ja palveluhaavoittuvuudet: 
+	
+	TCP/IP-verkoissa eri sovellukset ja palvelut käyttävät erilaisia portteja tiedonsiirtoon. 
+	Jos näitä portteja ei ole asianmukaisesti hallittu tai suojaustoimenpiteitä ei ole 
+	toteutettu, voi olla alttiina hyökkäyksille, kuten porttiskannaukselle ja 
+	hyödyntämisyrityksille.
+
+	Denial-of-Service (DoS) -hyökkäykset: 
+	
+	TCP/IP-verkot voivat olla alttiina DoS-hyökkäyksille, joissa pyritään tukkimaan resurssit 
+	tai palvelut estämällä oikeiden käyttäjien pääsy verkkoon. Esimerkkejä ovat esimerkiksi 
+	ICMP-pommitus, SYN-tulvasalama ja UDP-tulvahyökkäykset.
+
+	IP-osoitteiden väärentäminen: 
+	
+	Hyökkääjä voi yrittää väärentää IP-osoitteita, jolloin hän voi naamioitua toiseksi 
+	käyttäjäksi tai lähettää haitallisia tietoja verkossa. Tällainen hyökkäys voi vaikeuttaa 
+	liikenteen jäljittämistä ja vastuullisen osapuolen tunnistamista.
+
+	Man-in-the-Middle (MITM) -hyökkäykset: 
+	
+	MITM-hyökkäyksessä hyökkääjä sijoittuu kahden kommunikoivan osapuolen väliin ja pystyy 
+	vakoilemaan, muokkaamaan tai keskeyttämään tiedonsiirtoa. Tämä voi aiheuttaa 
+	luottamuksellisuuden ja eheyden ongelmia tiedonsiirrossa.
+
+	Protokolla-anomalioiden hyväksikäyttö: 
+	
+	TCP/IP-protokollapaketissa voi olla haavoittuvuuksia, jotka johtuvat protokolla-
+	anomalioiden hyväksikäytöstä. Tällaiset haavoittuvuudet voivat mahdollistaa haitallisen 
+	koodin suorittamisen, etuoikeuksien laajentamisen tai tietojen vuotamisen.
+
+	Salauspuutteet: TCP/IP-protokollapaketissa ei ole sisäänrakennettua salausta, joten 
+	tiedonsiirto voi olla alttiina vakoilulle ja tietojen luvattomalle pääsylle, ellei 
+	erillistä salausta ole käytössä. Puutteellinen tai heikko salaustekniikka voi myös 
+	aiheuttaa haavoittuvuuksia.
+
+	Heikot tunnistus- ja todennusmekanismit: 
+	
+	TCP/IP-verkkojen heikot tunnistus- ja todennusmekanismit voivat johtaa luvattomaan pääsyyn 
+	ja tunkeutumiseen järjestelmiin. Esimerkiksi heikkojen salasanojen tai avainten käyttö voi 
+	altistaa verkon hyökkäyksille.
+	
+	
+Yhteenveto:
+
+	Tietoturva TCP/IP-protokollapaketissa on äärimmäisen tärkeä asia, koska TCP/IP-verkot 
+	muodostavat perustan Internet-yhteyksille ja verkkoviestinnälle. Ymmärrys TCP/IP-
+	protokollapaketin toiminnasta, sen eri protokollien, kuten IP, TCP, UDP ja ICMP, 
+	tarkoituksesta ja ominaisuuksista on olennaista verkkoturvallisuuden kannalta.
+
+	Verkkoihin liittyvät tietoturvariskit ja haavoittuvuudet voivat vaikuttaa vakavasti 
+	tietojen luottamuksellisuuteen, eheyteen ja saatavuuteen. Esimerkiksi hyökkäykset, 
+	kuten porttiskannaus, DoS-hyökkäykset, MITM-hyökkäykset ja IP-osoitteiden väärentäminen, 
+	voivat aiheuttaa merkittäviä ongelmia verkkojen turvallisuudelle.
+
+	On tärkeää kiinnittää huomiota TCP/IP-verkkojen tietoturvaan ja toteuttaa asianmukaisia 
+	suojaustoimenpiteitä. Tämä voi sisältää palomuurien käyttöönoton, liikenteen salauksen, 
+	vahvan tunnistus- ja todennusmekanismin, protokolla-anomalioiden tunnistamisen ja 
+	korjaamisen sekä säännölliset päivitykset ja tietoturvakorjaukset.
+
+	Kokonaisuudessaan voidaan sanoa, että TCP/IP-verkkojen tietoturva on elintärkeää 
+	Internetin ja verkkoviestinnän toiminnan turvaamiseksi. Tietoturvaan panostaminen 
+	ja asianmukaisten suojaustoimenpiteiden toteuttaminen auttavat vähentämään riskiä 
+	hyökkäyksiltä, tietovuodoilta ja häiriöiltä verkossa.
+
