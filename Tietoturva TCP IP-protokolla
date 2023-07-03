@@ -23,30 +23,40 @@ TCP/IP-protokollapaketin merkitys ja rooli Internetin perustana:
 TCP/IP-protokollapaketin merkitys voidaan hahmottaa seuraavilla tavoilla:
 
 
-	Verkkoviestinnän mahdollistaminen: TCP/IP-protokollapaketti tarjoaa perustan 
-	verkkoviestinnälle. Se mahdollistaa eri laitteiden ja tietokonejärjestelmien 
-	välisen kommunikaation Internetissä. Protokollapaketti määrittelee säännöt ja 
-	standardit, joiden avulla laitteet voivat vaihtaa tietoa toistensa kanssa.
+	Verkkoviestinnän mahdollistaminen: 
 
-	Pakettikytkentäinen tiedonsiirto: TCP/IP hyödyntää pakettikytkentäistä tiedonsiirtoa. 
+	TCP/IP-protokollapaketti tarjoaa perustan verkkoviestinnälle. Se mahdollistaa 
+	eri laitteiden ja tietokonejärjestelmien välisen kommunikaation Internetissä. 
+	Protokollapaketti määrittelee säännöt ja standardit, joiden avulla laitteet 
+	voivat vaihtaa tietoa toistensa kanssa.
+
+	Pakettikytkentäinen tiedonsiirto: 
+	
+	TCP/IP hyödyntää pakettikytkentäistä tiedonsiirtoa. 
 	Tiedot jaetaan pienempiin paketteihin, jotka kulkevat eri reittejä verkossa. Tämä 
 	mahdollistaa tehokkaan tiedonsiirron eri verkkosegmenttien välillä.
 
-	Luotettava tiedonsiirto: TCP-protokolla vastaa luotettavasta tiedonsiirrosta 
-	TCP/IP-protokollapaketissa. Se varmistaa, että tieto saapuu oikeassa järjestyksessä 
-	ja ilman vikoja vastaanottajalle. TCP käyttää erilaisia mekanismeja, kuten numerointia, 
-	kuittausta ja uudelleenlähetystä, varmistaakseen tiedon eheyden ja toimituksen.
+	Luotettava tiedonsiirto: 
 
-	Verkon hallinta ja reititys: TCP/IP-protokollapaketti sisältää myös muita protokollia, 
-	kuten Internet Control Message Protocol (ICMP), joka mahdollistaa verkon hallinnan, 
-	virheiden raportoinnin ja reititystiedon päivityksen. ICMP-viestien avulla voidaan 
+	Protokolla vastaa luotettavasta tiedonsiirrosta TCP/IP-protokollapaketissa. 
+	Se varmistaa, että tieto saapuu oikeassa järjestyksessä ja ilman vikoja vastaanottajalle.
+	TCP käyttää erilaisia mekanismeja, kuten numerointia, kuittausta ja uudelleenlähetystä, 
+	varmistaakseen tiedon eheyden ja toimituksen.
+
+	Verkon hallinta ja reititys: 
+
+	Protokollapaketti sisältää myös muita protokollia, kuten Internet Control 
+	Message Protocol (ICMP), joka mahdollistaa verkon hallinnan, virheiden raportoinnin 
+	ja reititystiedon päivityksen. ICMP-viestien avulla voidaan 
 	tarkistaa verkon tila, diagnosoida ongelmia ja reitittää tietoa oikeille poluille.
 
-	Yhteensopivuus eri järjestelmien välillä: TCP/IP on standardi protokollapaketti, 
-	jota käytetään laajalti eri järjestelmissä ja laitteissa. Se mahdollistaa eri 
-	tietokoneiden ja verkkojen yhteensopivuuden, mikä on olennaista Internetin toiminnalle. 
-	TCP/IP-protokollapaketti toimii perustana monille sovelluksille ja palveluille, kuten 
-	web-selaimille, sähköpostille, tiedostojen jakamiselle ja etäyhteyksille.
+	Yhteensopivuus eri järjestelmien välillä: 
+
+	Standardi protokollapaketti, jota käytetään laajalti eri järjestelmissä 
+	ja laitteissa. Se mahdollistaa eri tietokoneiden ja verkkojen yhteensopivuuden, 
+	mikä on olennaista Internetin toiminnalle. TCP/IP-protokollapaketti toimii 
+	perustana monille sovelluksille ja palveluille, kuten web-selaimille, 
+	sähköpostille, tiedostojen jakamiselle ja etäyhteyksille.
 	
 
 TCP/IP-protokollapaketti käsittää ja miten se toimii:
