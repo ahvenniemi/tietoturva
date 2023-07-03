@@ -117,6 +117,7 @@ Tietokantojen salausmenetelmät ja käytännöt:
 
 Tiedoston salaus:
 
+
 	Sisältö muunnetaan salaamattomasta muodosta salaamiseen, jotta se ei ole luettavissa ilman 
 	salauksen purkamista. Tiedoston salaaminen tarjoaa tietoturvaa, kun tiedostoja ja tietoja 
 	lähetetään tai tallennetaan, erityisesti silloin kun niillä on arkaluonteista tai arvokasta 
@@ -158,6 +159,7 @@ Tiedoston salaus:
 
 Saraketasoinen salaus:
 
+
 	Saraketasoinen salaus (column-level encryption) on tietokantatason salausmenetelmä, jossa 
 	tietokannan taulujen sarakkeiden tiedot salataan ennen tallentamista tietokantaan. 
 	Saraketasoinen salaus tarjoaa lisäkerroksen tietoturvaa ja luottamuksellisuutta tietokannassa 
@@ -192,7 +194,9 @@ Saraketasoinen salaus:
 	salausta purkavaa prosessia. Käyttäjille ja sovelluksille on annettava asianmukaiset 
 	käyttöoikeudet tiedon salauksen purkamiseen, jotta he voivat käsitellä ja käyttää salattua tietoa.
 
+
 Avainten hallinta:
+
 
 	Keskeinen osa salaustekniikoita ja tietoturvaa. Avainten hallinnalla tarkoitetaan salausten 
 	avainten luomista, jakamista, säilyttämistä, vaihtamista ja päivittämistä sekä avainten 
@@ -265,6 +269,7 @@ Tietokantakäyttöoikeudet:
 
 
 Tietokannan suojaaminen ulkoisilta uhilta:
+
 
 	Tietokannan suojaaminen ulkoisilta uhilta on tärkeä osa tietoturvaa. Tässä on joitain keskeisiä 
 	toimenpiteitä tietokannan suojaamiseksi ulkoisilta uhilta. Seuraavat toimenpiteet auttavat 
@@ -362,6 +367,7 @@ Salaustekniikoiden soveltaminen tiedon siirrossa:
 
 Salaustekniikoiden soveltaminen tiedon käsittelyssä: 
 
+
 	Tiedostojen salaus: 
 	
 	Salaustekniikkaa voidaan käyttää tiedostojen salauksessa, jotta tiedot pysyvät turvassa, kun ne tallennetaan 
@@ -407,6 +413,7 @@ Salaustekniikoiden soveltaminen tiedon käsittelyssä:
 
 
 Salauksen merkitys tietoturvakäytännöissä: 
+
 
 	Salausmenetelmät auttavat suojaamaan arkaluontoista tietoa luvattomalta pääsyltä ja varmistamaan 
 	tietoturvan eri tiedonsiirto- ja tiedonkäsittelyprosesseissa.
