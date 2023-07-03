@@ -12,6 +12,7 @@ Johdanto:
 
 TCP/IP-protokollapaketin merkitys ja rooli Internetin perustana:
 
+
 	TCP/IP-protokollapaketti on Internetin perusta ja keskeinen tekijä sen toiminnassa. 
 	Se koostuu kahdesta pääprotokollasta: Internet Protocol (IP) ja Transmission Control 
 	Protocol (TCP). Näiden protokollien yhdistelmä mahdollistaa tehokkaan ja luotettavan 
@@ -19,6 +20,7 @@ TCP/IP-protokollapaketin merkitys ja rooli Internetin perustana:
 	
 
 TCP/IP-protokollapaketin merkitys voidaan hahmottaa seuraavilla tavoilla:
+
 
 	Verkkoviestinnän mahdollistaminen: TCP/IP-protokollapaketti tarjoaa perustan 
 	verkkoviestinnälle. Se mahdollistaa eri laitteiden ja tietokonejärjestelmien 
