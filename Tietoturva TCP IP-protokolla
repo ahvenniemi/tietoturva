@@ -3,6 +3,7 @@ Tietoturva TCP / IP-protokolla
 
 Johdanto:
 
+
 	TCP/IP-protokollapaketti on Internetin perusta, joka koostuu IP- ja TCP-protokollista. 
 	IP vastaa tiedonsiirrosta, osoitteistuksesta ja reitityksestä, kun taas TCP takaa 
 	luotettavan tiedonsiirron. Tämä protokollapaketti mahdollistaa Internetin toiminnan, 
