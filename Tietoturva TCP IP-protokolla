@@ -48,6 +48,7 @@ TCP/IP-protokollapaketin merkitys voidaan hahmottaa seuraavilla tavoilla:
 
 TCP/IP-protokollapaketti käsittää ja miten se toimii:
 
+
 	TCP/IP-protokollapaketti koostuu useista protokollista, jotka toimivat yhdessä 
 	mahdollistaen tiedonsiirron Internetissä. Tässä on yleiskatsaus tärkeimmistä 
 	protokollista ja niiden toiminnasta TCP/IP-protokollapaketissa:
@@ -81,6 +82,7 @@ TCP/IP-protokollapaketti käsittää ja miten se toimii:
 	
 	
 IP-protokollan tarkoitus ja tehtävät:
+
 	
 	Internet Protocol (IP) on keskeinen protokolla TCP/IP-protokollapaketissa. Sen 
 	tarkoituksena on mahdollistaa tiedonsiirto verkossa, määritellä osoitteistusjärjestelmä 
@@ -166,6 +168,7 @@ IPv4- ja IPv6-versioiden erot ja ominaisuudet:
 
 IP-osoitteiden ja aliverkkojen merkitys IP-protokollassa:
 
+
 	IP-protokolla käyttää IP-osoitteita ja aliverkkoja verkkojen identifioimiseen 
 	ja reitittämiseen. Tässä on selitys näiden käsitteiden merkityksestä IP-protokollassa
 
@@ -200,6 +203,7 @@ IP-osoitteiden ja aliverkkojen merkitys IP-protokollassa:
 	
 
 IP-protokolla reitittää paketteja verkossa:
+
 
 	IP-protokolla on vastuussa pakettien reitittämisestä verkossa. Kun tietoja lähetetään 
 	Internetissä, ne jaetaan pienempiin paketteihin, joille annetaan lähde- ja 
@@ -240,6 +244,7 @@ TCP-protokollan toiminta ja sen rooli luotettavan tiedonsiirron varmistamisessa:
 
 TCP käyttää seuraavia mekanismeja varmistaakseen luotettavan tiedonsiirron:
 
+
 	Pakettien numerointi: 
 	
 	Jokainen TCP-paketti varustetaan numerolla, joka ilmaisee sen järjestyksen 
@@ -277,8 +282,9 @@ TCP käyttää seuraavia mekanismeja varmistaakseen luotettavan tiedonsiirron:
 	mahdollistaa luotettavan tiedonsiirron Internetin kautta ja takaa, 
 	että tieto välittyy oikein ja täydellisenä.
 	
-	
+
 TCP-yhteyden muodostaminen, tiedonsiirto ja purkaminen:
+
 
 	TCP-yhteyden muodostaminen, tiedonsiirto ja purkaminen muodostavat kolme 
 	vaihetta TCP-protokollan käytössä luotettavan tiedonsiirron varmistamiseksi. 
@@ -331,7 +337,7 @@ TCP-yhteyden muodostaminen, tiedonsiirto ja purkaminen:
 	yhteys on turvallinen ja tehokas.
 	
 	
-TCP:n tärkeimmät ominaisuudet
+TCP:n tärkeimmät ominaisuudet:
 
 
 	TCP (Transmission Control Protocol) on luotettava kuljetusprotokolla, 
@@ -363,6 +369,7 @@ TCP:n tärkeimmät ominaisuudet
 	Ominaisuudet tekevät TCP:stä sopivan protokollan sovelluksiin, joissa vaaditaan 
 	luotettavaa tiedonsiirtoa, kuten verkkosivujen lataamiseen, tiedostojen siirtoon 
 	ja reaaliaikaiseen videostreamaukseen.	
+
 	
 UDP-protokolla (User Datagram Protocol)
 
@@ -399,7 +406,8 @@ UDP-protokollan ominaisuudet ja tarkoitus:
 	Mahdollistaa yksinkertaisen ja tehokkaan tiedonsiirron näissä sovelluksissa, 
 	mutta sovellustasolla on otettava huomioon epäluotettavuus ja tarvittavat 
 	virheenhallintatoimenpiteet.
-	
+
+
 UDP:n yksinkertaisempi luonne verrattuna TCP:hen:	
 
 
@@ -501,6 +509,7 @@ ICMP:n roolit:
 
 ICMP-viestien tarkoitus ja merkitys:
 
+
 	ICMP-viestit (Internet Control Message Protocol) ovat tärkeä osa Internet-
 	protokollapakettia ja niillä on useita tarkoituksia ja merkityksiä verkkoympäristössä.
 
@@ -534,6 +543,7 @@ ICMP-viestien tarkoitus ja merkitys:
 	ICMP-viestit ovat olennainen osa verkkojen hallintaa, diagnostiikkaa ja 
 	virheenkorjausta. Ne tarjoavat välineitä verkkojen valvontaan, vianmääritykseen 
 	ja tiedonvaihtoon.
+
 	
 Yleiset ICMP-viestityyppejä ja niiden käyttötarkoitukset:
 
@@ -573,10 +583,8 @@ Yleiset ICMP-viestityyppejä ja niiden käyttötarkoitukset:
 	Ne tarjoavat välineitä verkkojen valvontaan, vianmääritykseen ja tiedonvaihtoon.
 
 
-TCP/IP-protokollapaketin käyttö:
-
-
 TCP/IP-protokollapaketti käytännössä:
+
 
 	TCP/IP-protokollapakettia käytetään käytännössä laajasti Internetin ja muiden 
 	tietoverkkojen viestinnässä. Sitä käytetään tietojen lähettämiseen ja vastaanottamiseen 
@@ -607,6 +615,7 @@ TCP/IP-protokollapaketti käytännössä:
 
 TCP/IP mahdollistaa Internet-yhteyden ja verkkoviestinnän:
 
+
 	TCP/IP-protokollapaketti on olennainen osa Internet-yhteyksiä ja verkkoviestintää. 
 	Se tarjoaa viitekehyksen, joka mahdollistaa eri tietoverkkojen ja laitteiden 
 	yhteistoiminnan.
@@ -633,6 +642,7 @@ TCP/IP mahdollistaa Internet-yhteyden ja verkkoviestinnän:
 	
 	
 TCP/IP:n kanssa web-selaimet, sähköposti ja tiedonsiirto:
+
 
 	TCP/IP-protokollapaketti on olennainen osa monien sovellusten toimintaa, 
 	jotka käyttävät Internetiä ja verkkoviestintää. Tässä on joitakin esimerkkejä 
@@ -663,6 +673,7 @@ TCP/IP:n kanssa web-selaimet, sähköposti ja tiedonsiirto:
 
 
 Tietoturva TCP/IP-ympäristössä:
+
 
 	TCP/IP-protokollapaketti on keskeinen osa Internetin toimintaa, ja sen 
 	tietoturva on erittäin tärkeä asia. Tässä on joitakin näkökohtia 
@@ -712,6 +723,7 @@ Tietoturva TCP/IP-ympäristössä:
 
 Yleiset tietoturvariskit ja haavoittuvuudet:
 
+
 	Tietoturvariskit ja haavoittuvuudet TCP/IP-protokollapaketissa voivat olla 
 	moninaisia ja monenlaisia. Tässä on joitakin yleisiä tietoturvariskejä ja 
 	haavoittuvuuksia, joita TCP/IP-verkoissa voi esiintyä.
@@ -760,6 +772,7 @@ Yleiset tietoturvariskit ja haavoittuvuudet:
 	
 	
 Yhteenveto:
+
 
 	Tietoturva TCP/IP-protokollapaketissa on äärimmäisen tärkeä asia, koska TCP/IP-verkot 
 	muodostavat perustan Internet-yhteyksille ja verkkoviestinnälle. Ymmärrys TCP/IP-
