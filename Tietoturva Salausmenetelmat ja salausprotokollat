@@ -1,0 +1,1254 @@
+Salausmenetelmät ja salausprotokollat:
+
+
+Johdanto:
+
+	
+	Salausmenetelmät ja salausprotokollat ovat olennainen osa nykyaikaista tietoturvaa. 
+	Menetelmien avulla voidaan suojata arkaluontoista tietoa ja varmistaa tietoliikenteen 
+	luottamuksellisuus ja eheys. Tämä dokumenttini tarjoaa kattavan katsauksen salausmenetelmiin ja 
+	salausprotokolliin, jotka ovat keskeisiä tietoturvan rakennuspalikoita.
+
+	Käsitellään salauksen merkitystä ja peruskäsitteitä, jotka luovat pohjan ymmärrykselle salauksen 
+	roolista tietoturvan kannalta. Symmetrisen ja asymmetrisen salaamisen osuudet esittelevät näiden 
+	menetelmien toimintaperiaatteet ja tärkeimmät salausalgoritmit, sekä käsittelevät salaustekniikoiden 
+	keskeisiä haasteita kuten avaimen jakamista ja hallintaa.
+
+	Salausprotokollien osiossa tutustutaan SSL/TLS-, SSH- ja IPsec-protokollien toimintaan ja niiden 
+	rooliin suojatun tiedonsiirron toteuttamisessa. Lisäksi tarkastellaan salauksen soveltamista 
+	tietoliikenteen eri osa-alueilla, kuten tiedonsiirrossa ja tallennuksessa.
+
+	Dokumenttini pureutuu myös salauksen murtamisen ja haavoittuvuuksien maailmaan, tarjoten katsauksen 
+	erilaisiin salauksen murtamismenetelmiin ja tunnettuihin haavoittuvuuksiin. Lopuksi käsitellään 
+	salausmenetelmien hallintaa ja käytäntöjä, kuten avaintenhallintaa, sertifikaatteja ja julkista 
+	infrastruktuuria, sekä turvallisuusprotokollien ja -käytäntöjen merkitystä.
+
+	Salausmenetelmät ja salausprotokollat muodostavat tietoturvan perustan, joka on välttämätön osa 
+	nykyaikaista digitaalista maailmaa. Tämä dokumenttini tarjoaa syvällisen ymmärryksen 
+	salausmenetelmien ja salausprotokollien käsitteistä, toimintaperiaatteista ja niiden soveltamisesta 
+	käytännössä.
+	
+	
+Symmetrinen salaaminen:
+
+
+Peruskäsitteet:
+
+	Symmetrinen salaaminen on yksi keskeisistä salaustekniikoista, jota käytetään tietoturvassa. 
+	Tässä osiossa keskitytään symmetriseen salaamiseen ja sen toimintaperiaatteisiin. Symmetrinen 
+	salaaminen tarjoaa tehokkaan ja nopean tavan suojata tietoa, ja se on laajalti käytetty 
+	salausmenetelmä eri tietoturvakonteksteissa. Ymmärtämällä symmetrisen salaamisen periaatteet 
+	ja käytännön sovellukset, voit luoda vahvoja tietoturvaratkaisuja ja varmistaa luottamuksellisen 
+	tiedon säilymisen.
+
+	Symmetrisen salaamisen tarkoitus ja merkitys tietoturvassa. Salausavaimen käsite ja sen rooli 
+	symmetrisessä salaamisessa. Salausalgoritmit, kuten DES (Data Encryption Standard) ja AES 
+	(Advanced Encryption Standard), ja niiden ominaisuudet.
+	
+
+Symmetrisen salaamisen toiminta:
+
+	Salausprosessin vaiheet, kuten tekstiä salaava kryptausvaihe ja salausta purkava dekryptausvaihe.
+	Symmetrisen salaamisen lohkotilaisten salausalgoritmien toimintaperiaate, kuten ECB (Electronic 
+	Codebook) ja CBC (Cipher Block Chaining). Symmetrisen salaamisen vahvuudet ja heikkoudet, kuten 
+	avaimen jakamisen haasteet ja skaalautuvuuden rajoitukset. 
+	
+	
+Salausmenetelmät ja sovellukset:
+
+	Symmetrisen salaamisen käyttökohteet, kuten tiedonsiirto, tiedoston salaaminen ja salattujen 
+	viestien välitys. Salausmenetelmien soveltaminen eri tietoturvaprotokollissa, kuten SSL/TLS 
+	ja IPSec. Symmetrisen salaamisen toteutusohjeita ja parhaita käytäntöjä, kuten avaintenhallinta 
+	ja salausvoimakkuuden valinta.
+	
+
+Symmetrisen salaamisen haasteet:
+
+	Kvanttikoneiden uhka symmetriselle salaamiselle. Avaimenhallinta ja turvallisen avaintenvaihdon 
+	protokollat. Salausmenetelmien kehitys ja tulevaisuuden suuntaukset. Symmetrinen salaaminen 
+	perustuu siihen, että sama salausavain käytetään sekä tiedon salaamiseen että purkamiseen. 
+	Tässä osiossa tarkastellaan symmetrisen salaamisen toimintaperiaatetta ja sen keskeisiä vaiheita.
+	
+	Symmetrisen salaamisen toimintaperiaate on suhteellisen yksinkertainen ja tehokas. Salauksen 
+	nopeus on yleensä erittäin korkea, mikä tekee symmetrisestä salaamisesta suositun vaihtoehdon 
+	suurten tietomäärien salauksessa. Tärkein huomioitava seikka symmetrisessä salaamisessa on 
+	salausavaimen turvallinen jakaminen salausprosessin osapuolten välillä.
+	
+	
+Toimintaperiaate:	
+
+	Symmetrinen salaaminen perustuu siihen, että sekä salaaja että purkaja käyttävät samaa 
+	salausavainta tiedon salaamiseen ja purkamiseen. Toimintaperiaate voidaan kuvata seuraavasti.
+	
+	Salaaja että purkaja pitävät salausavaimen salassa ja turvassa. Avaimen menettäminen tai 
+	joutuminen vääriin käsiin voi altistaa salatut tiedot luvattomalle pääsylle. Symmetrisessä 
+	salaamisessa avaintenhallinta ja -turvallisuus ovat kriittisiä osa-alueita.
+
+	Symmetrinen salaaminen on nopea ja tehokas tapa suojata tiedon luottamuksellisuutta, kun 
+	salaajalla ja purkajalla on luotettava tapa jakaa salausavain. Tästä syystä symmetristä salausta
+	käytetään laajalti tiedon suojaamisessa erilaisissa sovelluksissa ja järjestelmissä.
+	
+	
+	Avaimen luominen: 
+
+	Purkaja tai salaaja sopivat etukäteen yhteisen salausavaimen, joka on tarpeeksi pitkä ja 
+	vahva. Avaimen luomisessa käytetään salausalgoritmia, joka takaa avaimen satunnaisuuden ja 
+	turvallisuuden.
+	
+	Salaamisen ensimmäinen vaihe on avaimen luominen. Symmetrisessä salaamisessa käytetään 
+	salausavainta, joka voi olla esimerkiksi 128, 256 tai 512 bittiä pitkä. Avaimen tulee olla 
+	tarpeeksi vahva, jotta sen murtaminen olisi käytännössä mahdotonta.
+	
+
+	Salaaminen: 
+
+	Salaaja käyttää salausalgoritmia ja salausavainta salaamaan viestin. Algoritmi ottaa 
+	selvätekstin (alkuperäisen viestin) ja suorittaa siihen matemaattisia operaatioita 
+	salausavaimen avulla. Tuloksena syntyy salattu viesti, joka ei ole suoraan ymmärrettävissä 
+	ilman oikeaa avainta.
+	
+	Symmetrisen salaamisen perusajatus on muuttaa salaamisen kohdetta, kuten tekstiä, 
+	binäärimuotoon siten, että se on ymmärrettävissä ainoastaan salausavaimen avulla. 
+	Salausalgoritmi suorittaa salaustoiminnon, jossa alkuperäinen teksti (selkokielinen viesti) 
+	käsitellään salausavaimen kanssa. Tämän seurauksena syntyy salattu viesti, joka on mahdollista 
+	purkaa takaisin alkuperäiseen muotoonsa vain oikean salausavaimen avulla.
+
+
+	Purkaminen: 
+	
+	Prosessi, jossa vastaanottaja käyttää samaa salausavainta ja salausalgoritmia, joita lähettäjä 
+	käytti viestin salaamiseen. Purkamisen tarkoituksena on palauttaa salattu viesti takaisin 
+	alkuperäiseen selvätekstimuotoonsa.
+
+	Salattu viesti vastaanotetaan, vastaanottaja käyttää salausavainta ja salausalgoritmia purkaakseen 
+	viestin. Algoritmi suorittaa purkuoperaatiot, jotka ovat käänteisiä salaustoimenpiteisiin verrattuna. 
+	Tämän seurauksena alkuperäinen viesti palautuu takaisin selvätekstimuotoon.
+
+	Vastaanottajalla on käytössään oikea salausavain, joka vastaa lähettäjän käyttämää avainta. Ilman 
+	oikeaa avainta salattu viesti ei voi purkautua oikein, ja alkuperäistä viestiä ei saada takaisin.
+
+	Purkaminen on välttämätöntä viestien salauksessa, sillä ilman purkamista salattu viesti pysyy 
+	salattuna ja sen sisältö on lukukelvotonta vastaanottajalle. Purkamisen avulla viestin vastaanottaja 
+	saa käyttöönsä alkuperäisen viestin ja voi lukea sen sisällön.
+
+	Purkaminen edellyttää oikeaa salausavainta ja käytettyä salausalgoritmia. Lisäksi on otettava huomioon 
+	salausalgoritmin oikea käyttö, jotta viesti voidaan purkaa oikein. Salausalgoritmin heikkoudet tai 
+	virheellinen käyttö voivat vaikuttaa purkamisen onnistumiseen.
+
+	Tärkeä vaihe symmetrisessä salauksessa, jossa käytetään samaa avainta salaamiseen ja purkamiseen. 
+	Oikean avaimen käyttö ja purkamisprosessin asianmukainen toteuttaminen varmistavat, että salattu 
+	viesti palautuu alkuperäiseen muotoonsa ja viestin sisältö on luettavissa.	
+
+
+Symmetriset salausalgoritmit:
+
+	
+	DES:
+	
+	DES (Data Encryption Standard) on symmetrinen salausalgoritmi, joka kehitettiin alun perin 
+	Yhdysvaltain hallituksen käyttöön. Se on yksi tunnetuimmista ja laajimmin käytetyistä 
+	symmetrisistä salausalgoritmeista.
+
+	Käyttää 64-bittistä avainta ja toimii 64-bittisillä lohkoilla. Salausalgoritmi koostuu 
+	useista substituutio- ja permutaatio-operaatioista, jotka suoritetaan useissa kierroksissa. 
+	Avain kiertää ja muuttuu jokaisen kierroksen aikana, mikä tekee DES:stä turvallisen.
+
+	Tarjoaa hyvän tietoturvan ja suorituskyvyn tasapainon. Algoritmi on nopea ja tehokas, 
+	mikä tekee siitä sopivan moniin käyttötarkoituksiin, kuten tiedostojen salaamiseen ja 
+	tietoliikenteen suojaamiseen.
+
+	DES:llä on myös heikkouksia. Algoritmi käyttää suhteellisen lyhyttä avainta, mikä tekee 
+	siitä alttiin bruteforce-hyökkäyksille, joissa kaikki mahdolliset avainkombinaatiot testataan. 
+	Tämän vuoksi DES:ää käytetään nykyään harvemmin ja sitä on korvattu kehittyneemmillä 
+	salausalgoritmeilla, kuten AES (Advanced Encryption Standard).
+
+	Ei enää pidetä parhaimpana vaihtoehtona nykypäivän tietoturvaan, sen merkitys 
+	salausalgoritmien historiassa ja kehityksessä on merkittävä. DES toimi pohjana monien muiden 
+	symmetristen salausalgoritmien kehittämiselle ja sen vaikutus salausmaailmaan on edelleen 
+	havaittavissa.
+	
+	
+	Mahdollinen murtohyökkäys: 
+	
+	Brute-force -menetelmä
+
+	Aika: 
+	
+	Nykyisin DES voidaan murtaa kohtuullisen nopeasti, yleensä muutamissa tunneissa tai 
+	päivissä, käyttäen tehokkaita laskentamenetelmiä.
+
+
+	AES:
+	
+	AES (Advanced Encryption Standard) on nykyään laajasti käytetty symmetrinen salausalgoritmi, 
+	joka korvasi vanhentuneen DES -algoritmin. Se on suunniteltu tarjoamaan korkean tason 
+	tietoturvaa ja tehokasta salausta erilaisiin sovelluksiin.
+
+	Toimii lohkosalausalgoritmina, jossa tieto käsitellään kiinteän kokoisissa bittilohkoissa. 
+	Algoritmi tukee eri avainpituudet, mukaan lukien 128-bittiä, 192-bittiä ja 256-bittiä. Mitä 
+	pidempi avain, sitä vahvempi salaus.
+
+	Salausprosessi koostuu useista vaiheista, mukaan lukien substituutio, permutaatio ja 
+	sekoitusoperaatiot. AES:ssä on neljä erilaista salaustilaa (128, 192, 256 bittiä), jotka 
+	määrittävät, kuinka monta kierrosta algoritmi suorittaa. Jokaisessa kierroksessa suoritetaan 
+	erilaisia vaiheita, mikä tekee AES:stä erittäin turvallisen ja kestävän hyökkäyksiä vastaan.
+
+	Saanut laajaa hyväksyntää tietoturvayhteisössä ja sitä käytetään laajasti eri 
+	sovelluksissa, kuten tiedostojen salaamisessa, tietoliikenteen suojaamisessa ja salattujen 
+	yhteyksien muodostamisessa. Se on myös standardi salausalgoritmi monissa tietoturva- ja 
+	salaustuotteissa.
+
+	Osoittautunut olevan erittäin vahva tietoturva, eikä sille ole löydetty tehokkaita 
+	hyökkäyksiä. Algoritmin suorituskyky on myös hyvä, mikä mahdollistaa nopean salaamisen suurille 
+	tietomäärille.
+
+	Luotettava ja turvallinen symmetrinen salausalgoritmi, joka on tullut standardiksi 
+	monissa käyttötapauksissa, joissa tarvitaan vahvaa tietoturvaa. Sen tehokkuus ja turvallisuus 
+	tekevät siitä ihanteellisen valinnan nykyaikaisille tietoturvatietojärjestelmille.
+	
+	
+	Mahdollinen murtohyökkäys: 
+	
+	Brute-force -menetelmä
+	
+	Aika: 
+	
+	AES:n avainpituuden mukaan murtohyökkäys kestää kohtuuttoman pitkän ajan nykyisellä 
+	teknologialla. 128-bittinen avain kestää arvioiden mukaan miljardeja vuosia, kun taas 
+	256-bittinen avain on käytännössä mahdoton murtaa.
+
+
+	Blowfish:
+	
+	Blowfish on symmetrinen salausalgoritmi, joka kehitettiin alun perin vuonna 1993. Se on 
+	suunniteltu tarjoamaan nopeaa ja tehokasta salausta erilaisiin sovelluksiin.
+
+	Käyttää lohkosalausalgoritmia, jossa tieto käsitellään kiinteän kokoisissa 
+	bittilohkoissa. Algoritmissa käytetään vaihtelevan pituisia avaimia, jotka voivat olla 
+	32-448 bittiä pitkiä. Tämä tekee Blowfishista joustavan ja soveltuvan erilaisiin 
+	salausvaatimuksiin.
+
+	Salausprosessi koostuu useista vaiheista, mukaan lukien substituutio, permutaatio ja XOR-
+	operaatiot. Blowfish suorittaa useita kierroksia, joiden määrä riippuu käytetystä avaimen 
+	pituudesta. Algoritmin suorituskyky on hyvä, ja se on suunniteltu toimimaan tehokkaasti 
+	erilaisilla alustoilla.
+
+	Osoittautunut vahvaksi salausalgoritmiksi, eikä sille ole löydetty tehokkaita 
+	hyökkäyksiä. Se on laajasti käytetty algoritmi tiedon salaamisessa, tiedostojen suojaamisessa 
+	ja verkkoviestinnässä. Blowfishia käytetään myös monissa tietoturvatyökaluissa ja -protokollissa.
+
+	Edelleen laajasti käytössä, uudemmat salausalgoritmit, kuten AES, ovat 
+	yleistyneet ja tarjoavat usein parempaa suorituskykyä ja tietoturvaa. Silti Blowfish on edelleen 
+	arvostettu algoritmi, ja se voi olla hyvä valinta tiettyihin sovelluksiin, jotka vaativat nopeaa 
+	ja tehokasta salausta.
+	
+	
+	Mahdollinen murtohyökkäys: 
+	
+	Differentiaalinen kryptoanalyysi, lineaarinen kryptoanalyysi
+
+	Aika: 
+	
+	Blowfishin avainpituuden ollessa 64-448 bittiä, murtoyritykset voivat kestää huomattavan kauan, 
+	mutta erityisesti lineaarinen kryptoanalyysi on osoittanut tehokkuutta joissakin tapauksissa.
+
+
+	3DES:
+	
+	3DES (Triple Data Encryption Standard) on symmetrinen salausalgoritmi, joka perustuu Data 
+	Encryption Standard (DES) -algoritmiin. Se on kehitetty vahvistamaan DES-algoritmin tietoturvaa.
+
+	Käyttää lohkosalausta, jossa tieto käsitellään 64-bittisissä lohkoissa. Algoritmi suorittaa 
+	useita vaiheita, jotka sisältävät avaimien johdannon ja iteroitujen DES-lohkosalausten 
+	suorittamisen. 3DES:ssä tieto salataan kolme kertaa peräkkäin käyttäen eri avaimia, mikä lisää 
+	salauksen lujuutta ja varmistaa suuremman tietoturvan.
+
+	3DES:llä on kaksi päätilaa, joissa se voidaan suorittaa: EDE (Encrypt-Decrypt-Encrypt) ja 
+	EEE (Encrypt-Encrypt-Encrypt). EDE-tilassa ensimmäinen avain suorittaa salauksen, toinen 
+	avain purkaa sen ja kolmas avain salaa sen uudelleen. EEE-tilassa kaikki kolme avainta 
+	käytetään salauksen suorittamiseen peräkkäin.
+
+	Osoittautunut vahvaksi salausalgoritmiksi ja se on laajasti käytetty eri sovelluksissa, 
+	kuten tiedonsiirrossa, verkkoliikenteen salaamisessa ja tiedostojen suojaamisessa. Se tarjoaa 
+	hyvän tietoturvatason, vaikka sen suorituskyky voi olla hitaampi kuin nykyaikaisempien 
+	algoritmien, kuten AES:n, suorituskyky.
+
+	Tarjoaa paremman tietoturvan kuin alkuperäinen DES, sen käyttöä uusissa 
+	sovelluksissa on vähennetty AES:n suosion kasvaessa. AES tarjoaa paremman suorituskyvyn ja 
+	usein paremman tietoturvan verrattuna 3DES:ään. Silti 3DES voi olla edelleen käytännöllinen 
+	ja hyväksyttävä valinta tietyissä järjestelmissä, joissa 3DES:ään liittyvää yhteensopivuutta 
+	tai vaatimuksia on olemassa.
+	
+	
+	Mahdollinen murtohyökkäys: 
+	
+	Brute-force -menetelmä
+	
+	Aika: 
+	
+	Koska 3DES käyttää useita DES-kierroksia, sen murtaaminen vaatii huomattavasti enemmän aikaa 
+	kuin yksittäisen DES:n. Käytännössä tämä tarkoittaa, että 3DES:ää ei nykyisin pidetä turvallisena 
+	pitkäaikaiseen salaukseen.
+
+
+	RC4:
+	
+	RC4 (Rivest Cipher 4) on virtaussalausalgoritmi, jota käytetään symmetrisessä salauksessa. 
+	Algoritmi on kehitetty vuonna 1987 Ronald Rivestin toimesta ja se on yksi yleisimmin käytetyistä 
+	salausalgoritmeista eri sovelluksissa.
+
+	Toimii siten, että se generoi pseudosatunnaisen avainvirran, joka sitten yhdistetään 
+	salaamisen kohteen kanssa käyttäen XOR (exclusive OR) -operaatiota. Avainvirta generoidaan 
+	salausavaimen perusteella käyttäen erityistä algoritmin tilaa ja siirtämistä (state permutation) 
+	sekä avaimen aikaisempia lohkoja. Avainvirran pituus on yleensä 8-256 bittiä.
+
+	RC4 on virratyyppinen salausalgoritmi, mikä tarkoittaa, että se salailee tiedon bitti kerrallaan. 
+	Algoritmi on nopea ja tehokas, mikä tekee siitä suosittua erityisesti langattomissa ja 
+	sulautetuissa järjestelmissä, joissa suorituskyky on tärkeää.
+
+	Käytetty laajasti, siinä on havaittu tietoturvariskejä ja haavoittuvuuksia. Erityisesti
+	avaimen aikaisempien lohkojen arvaaminen voi johtaa tietoturvan heikkenemiseen. Lisäksi RC4:n 
+	heikkoudet ovat tulleet esille kryptografian tutkimuksessa, mikä on johtanut sen käytön 
+	rajoittamiseen tai kokonaan hylkäämiseen tietyissä sovelluksissa.
+
+	Suositeltavaa käyttää nykyaikaisempia salausalgoritmeja, kuten AES, jotka tarjoavat paremman 
+	tietoturvan ja ovat vahvemmin tutkittuja. RC4:n käyttöä tulisi harkita tarkkaan, ja jos sitä 
+	'käytetään, on otettava huomioon sen tunnetut haavoittuvuudet ja turvallisuusriskeihin 
+	liittyvät tekijät.
+	
+
+	Mahdollinen murtohyökkäys: 
+	
+	Käyttöön liittyvät heikkoudet, kuten WEP-hyökkäykset
+	
+	Aika: 
+	
+	RC4:ää käytettiin aikaisemmin langattomissa verkoissa, kuten WEP-salausprotokollassa. 
+	Kuitenkin RC4:ää ei enää suositella käytettäväksi tietoturvallisessa yhteydessä, koska siihen 
+	liittyy useita haavoittuvuuksia ja sen käyttö on hylätty.
+	
+	
+	1DEA:
+	
+	IDEA (International Data Encryption Algorithm) on symmetrinen salausalgoritmi, joka kehitettiin 
+	vuonna 1991. Se on suunniteltu tarjoamaan vahvaa tietoturvaa ja tehokasta tiedon salausta eri 
+	sovelluksissa.
+
+	Perustuu lohkosalausalgoritmiin, jossa tiedon salaaminen tapahtuu tiettyjen lohkojen käsittelyn 
+	kautta. Algoritmi käyttää 64-bittisiä salausavaimia ja 64-bittisiä lohkoja. Salaamisprosessissa 
+	alkuperäinen viesti jaetaan 64-bittisiin lohkoihin, ja jokainen lohko käsitellään useiden 
+	kierrosten aikana. Kunkin kierroksen aikana lohkoa käsitellään eri vaiheissa, mukaan lukien 
+	substituutio, permuutio ja XOR-operaatiot. Salaamisen jälkeen lohkot yhdistetään takaisin salatuksi 
+	viestiksi.
+
+	IDEA on tunnettu vahvasta turvallisuudestaan ja tehokkuudestaan. Algoritmi on suunniteltu 
+	kestämään monia erilaisia kryptoanalyyttisia hyökkäyksiä, ja se on osoittautunut luotettavaksi 
+	salaamismenetelmäksi. IDEA-algoritmi on myös nopea ja suorituskykyinen, mikä tekee siitä 
+	hyödyllisen monissa sovelluksissa.
+
+	Osoittautunut vahvaksi ja turvalliseksi salausalgoritmiksi, sen käyttö on vähentynyt viime 
+	vuosina. Tämä johtuu pääasiassa algoritmin patenttisuojan päättymisestä ja sen korvaamisesta 
+	nykyaikaisemmilla ja paremmin tutkituilla salausalgoritmeilla, kuten AES. Suositeltavaa on 
+	käyttää nykyaikaisempia salausalgoritmeja, jotka tarjoavat vahvemman tietoturvan ja laajemman 
+	tuen eri sovelluksissa.
+
+
+	Mahdollinen murtohyökkäys: 
+	
+	Differentiaalinen kryptoanalyysi
+
+	Aika: 
+	
+	IDEA:n murtaaminen differentiaalisen kryptoanalyysin avulla vaatii huomattavan määrän 
+	laskentaresursseja ja aikaa. Nykyisin IDEA:tä pidetään edelleen melko turvallisena, vaikka 
+	se onkin menettänyt suosiotaan uudempien salausalgoritmien hyväksi.
+	
+	
+	Serpent:
+	
+	Serpent on symmetrinen salausalgoritmi, joka on suunniteltu tarjoamaan vahvaa tietoturvaa 
+	ja tehokasta tiedon salausta. Se kehitettiin vuonna 1998 ja se on yksi viidestä valitusta 
+	algoritmista Advanced Encryption Standard (AES) -kilpailussa.
+
+	Algoritmi perustuu lohkosalausalgoritmiin, jossa tiedon salaaminen tapahtuu lohkojen 
+	käsittelyn avulla. Algoritmi käyttää 128-bittisiä salausavaimia ja 128-bittisiä lohkoja. 
+	Salaamisprosessissa viesti jaetaan lohkoihin, jotka käsitellään useiden kierrosten aikana. 
+	Kierrosten aikana suoritetaan erilaisia vaiheita, kuten substituutio, permuutio ja XOR-
+	operaatiot. Nämä vaiheet tekevät salausavaimen käytöstä ennustamattoman ja vaikeasti 
+	purettavan.
+
+	Tunnettu vahvasta turvallisuudestaan ja resistenttisyydestään kryptoanalyyttisia 
+	hyökkäyksiä vastaan. Algoritmi on suunniteltu kestämään erilaisia hyökkäysmenetelmiä, kuten 
+	differentiaali- ja lineaarihyökkäyksiä. Se tarjoaa myös hyvän suorituskyvyn eri ympäristöissä 
+	ja sovelluksissa.
+
+	Serpent-algoritmi on laajalti käytetty salaamismenetelmä erilaisissa tietoturva- ja 
+	tietoliikennesovelluksissa. Se on saanut laajaa hyväksyntää tietoturvayhteisössä ja sitä 
+	pidetään luotettavana salausalgoritmina. Serpentin avoimen suunnittelun ansiosta se on myös 
+	läpikäynyt laajan vertaisarvioinnin ja tarkastuksen, mikä lisää sen luotettavuutta ja 
+	turvallisuutta.
+
+	Edelleen käytössä monissa järjestelmissä, mutta sen käyttö on vähentynyt AES:n 
+	yleistymisen myötä. AES-algoritmi on nykyään suositeltu valinta symmetriseen salaukseen, 
+	koska se tarjoaa erinomaisen turvallisuuden, suorituskyvyn ja laajan tukemisen eri sovelluksissa.
+	
+	
+	Mahdollinen murtohyökkäys: 
+	
+	Differentiaalinen kryptoanalyysi, lineaarinen kryptoanalyysi
+	
+	Aika: 
+	
+	Serpentin murtaaminen differentiaalisen tai lineaarisen kryptoanalyysin avulla on laskentatehon 
+	vaativa tehtävä. Se on suunniteltu erityisesti kestämään pitkäkestoisia murtohyökkäyksiä, ja 
+	sen uskotaan olevan turvallinen myös pitkällä aikavälillä.
+	
+		
+	Twofish:
+	
+	Twofish on symmetrinen salausalgoritmi, joka kehitettiin vuonna 1998. Se on suunniteltu '
+	tarjoamaan vahvaa tietoturvaa ja tehokasta tiedon salausta eri sovelluksissa. Twofish oli 
+	yksi ehdokkaista Advanced Encryption Standard (AES) -kilpailussa, vaikka se ei lopulta 
+	valittu AES-standardiksi.
+
+	Algoritmi perustuu lohkosalausalgoritmiin, jossa tiedon salaaminen tapahtuu 
+	lohkojen käsittelyn avulla. Se käyttää 128-bittisiä salausavaimia ja 128-bittisiä lohkoja. 
+	Salaamisprosessissa viesti jaetaan lohkoihin, joita käsitellään useiden kierrosten aikana. 
+	Kierrosten aikana suoritetaan erilaisia vaiheita, kuten substituutio, permuutio ja XOR-
+	operaatiot. Näiden vaiheiden avulla saavutetaan vahva salausturva ja hyvä suorituskyky.
+
+	Suunniteltu kestämään erilaisia hyökkäyksiä, kuten differentiaali- ja 
+	lineaarihyökkäyksiä. Se tarjoaa myös hyvän turvallisuuden erilaisissa ympäristöissä ja 
+	sovelluksissa. Twofishin suunnittelussa on kiinnitetty erityistä huomiota turvallisuuteen 
+	ja suorituskykyyn, ja se on läpikäynyt laajan vertaisarvioinnin ja tarkastuksen.
+
+	Ei valittu AES-standardiksi, se on silti laajasti käytetty salausalgoritmi eri sovelluksissa. 
+	Sitä voidaan käyttää tiedon salaamiseen, tietoturvaprotokollien toteuttamiseen ja muissa 
+	tietoturvaympäristöissä. Twofish tarjoaa vahvan turvallisuuden ja tehokkaan suorituskyvyn, 
+	mikä tekee siitä houkuttelevan valinnan tietoturvan kannalta.
+
+	Twofishin käyttö on vähentynyt AES:n yleistymisen myötä. AES-algoritmi on nykyään suositeltu 
+	valinta symmetriseen salaukseen, koska se tarjoaa erinomaisen turvallisuuden, laajan tuen 
+	ja hyvän suorituskyvyn eri sovelluksissa.
+
+
+	Mahdollinen murtohyökkäys: 
+	
+	Differentiaalinen kryptoanalyysi, lineaarinen kryptoanalyysi
+	
+	Aika: 
+	
+	Twofishin murtaaminen differentiaalisen tai lineaarisen kryptoanalyysin avulla vaatii merkittävän 
+	määrän laskentatehoa. Nykyisin se kuitenkin tarjoaa hyvän turvallisuustason ja sitä pidetään 
+	edelleen vahvana symmetrisenä salausalgoritmina.
+
+
+	Camellia:
+	
+	Camellia on symmetrinen salausalgoritmi, joka kehitettiin yhteistyössä Japanin ja Euroopan 
+	asiantuntijoiden kesken. Se julkaistiin vuonna 2000 ja on suunniteltu tarjoamaan vahvaa 
+	tietoturvaa ja tehokasta tiedon salausta eri sovelluksissa.
+
+	Algoritmi perustuu lohkosalausalgoritmiin, jossa tiedon salaaminen tapahtuu lohkojen 
+	käsittelyn avulla. Se käyttää 128-bittisiä salausavaimia ja 128-bittisiä lohkoja. 
+	Salaamisprosessissa viesti jaetaan lohkoihin, joita käsitellään useiden kierrosten aikana. 
+	Kierrosten aikana suoritetaan erilaisia vaiheita, kuten substituutio, permuutio ja XOR
+	-operaatiot, joilla saavutetaan vahva salausturva ja hyvä suorituskyky.
+
+	Suunniteltu kestämään erilaisia hyökkäyksiä, kuten differentiaali- ja lineaarihyökkäyksiä. 
+	Algoritmi tarjoaa myös hyvän turvallisuuden erilaisissa ympäristöissä ja sovelluksissa. 
+	Camellia on joustava salausalgoritmi, jonka avulla voidaan toteuttaa erilaisia salaustarkkuuksia 
+	ja salausmuotoja.
+
+	Camellia-algoritmi on saanut tunnustusta tietoturvayhteisössä ja se on hyväksytty useisiin 
+	kansainvälisiin standardointiorganisaatioihin, kuten ISO/IEC ja NESSIE (New European Schemes 
+	for Signatures, Integrity, and Encryption). Se on myös osa useiden tietoturvaprotokollien ja 
+	-standardien toteutuksia.
+
+	Käytetään laajasti eri sovelluksissa, kuten tiedon salaamisessa, verkkoliikenteen suojauksessa, 
+	virtuaalisten yksityisverkkojen toteuttamisessa ja tietoturvapalveluiden tarjoamisessa. Algoritmi 
+	tarjoaa hyvän turvallisuustason, joustavuuden ja tehokkaan suorituskyvyn erilaisissa ympäristöissä.
+
+	Pidetään yhtenä vahvana ja luotettavana salausalgoritmina, ja se on edelleen käytössä monissa 
+	järjestelmissä ympäri maailmaa.
+	
+	Mahdollinen murtohyökkäys: 
+	
+	Brute-force -menetelmä
+	
+	Aika: 
+	
+	Camelliaan liittyvät murtohyökkäykset perustuvat pääasiassa brute-force -menetelmiin. 
+	
+	Murtoyritykset kestävät pitkään riippuen avaimen pituudesta. Käyttämällä riittävän pitkiä 
+	avaimia Camellia tarjoaa turvallisuuden nykyisillä resursseilla.
+	
+	
+	CAST-128:
+	
+	CAST-128 (CAST5) on symmetrinen salausalgoritmi, joka kehitettiin alun perin Kanadassa. 
+	Se on suunniteltu tarjoamaan tietoturvaa ja luottamuksellisuutta erilaisissa sovelluksissa, 
+	kuten tiedon salaamisessa ja turvallisessa tiedonsiirrossa.
+
+	Perustuu lohkosalausalgoritmiin, jossa tiedon salaaminen tapahtuu lohkojen 
+	käsittelyn avulla. Algoritmi käyttää 128-bittisiä salausavaimia ja 64-bittisiä lohkoja. 
+	Salaamisprosessissa viesti jaetaan lohkoihin, joita käsitellään useiden kierrosten aikana. 
+	Kierrosten aikana suoritetaan erilaisia vaiheita, kuten substituutio, permuutio ja XOR-
+	operaatiot, joilla saavutetaan salausturva.
+
+	Hyvän turvallisuustason ja suorituskyvyn. Se on suunniteltu kestämään erilaisia salaushyökkäyksiä, 
+	kuten differentiaalihyökkäyksiä ja lineaarihyökkäyksiä. Algoritmi on myös suhteellisen nopea ja 
+	tehokas, mikä tekee siitä houkuttelevan valinnan monissa sovelluksissa.
+
+	Laajasti käytössä eri järjestelmissä ja protokollissa, kuten Secure Socket Layer (SSL) -protokollassa 
+	ja virtuaalisten yksityisverkkojen toteuttamisessa. Algoritmi on osoittautunut luotettavaksi ja 
+	turvalliseksi vaihtoehdoksi tiedon salaamiseen ja suojaukseen.
+
+	Käytettiin menneisyydessä, sen käyttö on nykyään vähentynyt ja sitä on korvattu edistyneemmillä 
+	salausalgoritmeilla, kuten AES (Advanced Encryption Standard). AES on nykyisin suositeltu valinta 
+	symmetrisessä salaamisessa sen paremman turvallisuuden ja suorituskyvyn vuoksi.
+
+
+	Mahdollinen murtohyökkäys: 
+	
+	Brute-force -menetelmä
+	
+	Aika: 
+	
+	CAST-128:n murtaaminen riippuu avaimen pituudesta. Pitkän avaimen tapauksessa brute-force 
+	-hyökkäykset ovat hyvin vaikeita toteuttaa nykyisellä teknologialla. Käytännössä CAST-128:aa 
+	pidetään yhä vahvana symmetrisenä salausalgoritmina.
+	
+	
+Toimintaperiaate:	
+	
+	Edelliset mainitut salausalgorytmittoimivat pääasiassa samankaltaisella periaatteella, joka 
+	perustuu symmetriseen salaamiseen. Symmetrinen salaaminen tarkoittaa sitä, että sama avain 
+	käytetään sekä tiedon salaamiseen että purkamiseen. Alla on yleinen toimintaperiaate, jota 
+	nämä salausalgoritmit noudattavat:
+
+	Näiden salausalgoritmien välillä on eroja niiden toteutuksessa, lohkojen koossa, avaimen 
+	pituudessa, substituutio- ja permuutiovaiheissa sekä muissa yksityiskohdissa. Jokaisella 
+	algoritmilla on omat vahvuutensa ja heikkoutensa tietoturvan, suorituskyvyn ja sovelluskohteiden 
+	suhteen.
+
+	Salausalgoritmien turvallisuus voi muuttua ajan myötä, kun tietotekniikan kehitys mahdollistaa 
+	uusia hyökkäystekniikoita. Siksi on suositeltavaa seurata alan asiantuntijoiden suosituksia ja 
+	päivittää käytetyt algoritmit tarvittaessa uudempiin ja turvallisempiin versioihin.
+	
+
+Symmetristen salausalgoritmien murtaminen:
+
+	Kyseiset salausalgoritmit eivät ole täysin immuuneja murtohyökkäyksille. Vaikka monet nykyiset 
+	symmetriset algoritmit tarjoavat vahvan turvallisuustason, on mahdollista, että tulevaisuudessa 
+	uusia kehittyneitä hyökkäysmenetelmiä ja laskentaresursseja voidaan käyttää niiden murtautumiseen. 
+	Tärkeää seurata alan kehitystä ja käyttää aina ajan tasalla olevia ja turvallisia salausalgoritmeja.
+
+	Murtohyökkäysmenetelmät voivat kohdistua salausalgoritmin heikkouksiin ja pyrkiä purkamaan salauksen
+	avaimeen perustuen. Yleisiä murtohyökkäysmenetelmiä ovat esimerkiksi brute-force -hyökkäykset, 
+	differentiaalinen kryptoanalyysi, lineaarinen kryptoanalyysi ja muut kryptografiset heikkoudet 
+	hyödyntävät menetelmät. Näiden hyökkäysmenetelmien tehokkuus ja aika, joka niiden toteuttamiseen 
+	vaaditaan, vaihtelevat suuresti.
+
+	Salausalgoritmin turvallisuus riippuu monista tekijöistä, kuten avaimen pituudesta, avaimen 
+	hallinnasta, algoritmin suunnittelusta, toteutuksesta ja käytetyistä protokollista. 
+	Turvallisen symmetrisen salausalgoritmin valintaan vaikuttavat nämä tekijät yhdessä, ja 
+	valinnassa on otettava huomioon nykyiset turvallisuusstandardit ja suositukset.
+
+	Symmetriset salausalgoritmit ovat kestäneet aikaa ja osoittautuneet turvallisiksi pitkään, 
+	on aina mahdollista, että uusia murtohyökkäysmenetelmiä tai heikkouksia löydetään tulevaisuudessa. 
+	Siksi on suositeltavaa käyttää vakiintuneita ja hyvämaineisia symmetrisiä salausalgoritmeja, 
+	joita on testattu laajasti, ja päivittää tarvittaessa uudempiin ja turvallisempiin versioihin, 
+	kun ne tulevat saataville.
+
+	Tiedonsiirron ja salaustekniikan kannalta on olennaista pysyä ajan tasalla alan kehityksestä, 
+	seurata uusimpia turvallisuusstandardien suosituksia ja käyttää luotettavia tietoturvamenetelmiä. 
+	Siten voidaan varmistaa, että salatut viestit ja tiedot säilyvät suojattuina ja pysyvät 
+	luottamuksellisina.
+	
+
+Asymmetriset salausalgoritmit:
+	
+	
+	RSA:
+
+	RSA (Rivest-Shamir-Adleman) on yksi tunnetuimmista ja laajimmin käytetyistä asymmetrisistä 
+	salausalgoritmeista. Se perustuu matemaattisiin periaatteisiin, jotka liittyvät suuren alkuluvun 
+	tekijöiden löytämiseen.
+
+	Algoritmissa käytetään kahta avainta: julkinen avain ja yksityinen avain. Julkinen avain 
+	jaetaan vapaasti kaikkien saataville, kun taas yksityinen avain pidetään salassa. Nämä avaimet 
+	muodostavat parin, jolla on erityinen matemaattinen suhde toisiinsa. Tämä suhde mahdollistaa 
+	tiedon salaamisen yhdellä avaimella ja purkamisen toisella.
+
+	Algoritmin toimintaperiaate perustuu modulaariseen eksponentiaatioon ja alkulukujen ominaisuuksiin. 
+	Julkisen avaimen avulla voidaan suorittaa salaaminen, kun taas vain vastaava yksityinen avain 
+	mahdollistaa purkamisen. Tiedon salaaminen tapahtuu laskemalla viestin potenssiin julkinen avain 
+	modulo jokin luku. Purkaminen puolestaan tapahtuu laskemalla salattu viesti potenssiin yksityinen 
+	avain modulo sama luku.
+
+	Turvallisuus perustuu siihen, että suurten alkulukujen tekijöiden löytäminen on vaikeaa, kun 
+	luvut ovat riittävän suuria. Algoritmin turvallisuus riippuu siis suuresti käytettyjen avainten 
+	pituudesta. Pidemmät avaimet tarjoavat suuremman turvallisuustason, mutta samalla myös suuremman 
+	laskentatehon tarpeen.
+
+	Laajalti käytössä tietoliikenteen salaamisessa, digitaalisten allekirjoitusten luomisessa ja 
+	turvallisten yhteyksien luomisessa. Sitä käytetään esimerkiksi SSL/TLS-protokollassa verkkosivustojen 
+	turvallisen tiedonsiirron takaamiseksi. RSA:ta käytetään myös digitaalisissa sertifikaateissa, 
+	joiden avulla voidaan todentaa verkkopalveluiden aitous ja luotettavuus.
+
+	Etuna on sen tehokkuus ja laaja tuki eri järjestelmissä. Se tarjoaa vahvan salaustason ja 
+	mahdollistaa turvallisen tiedonsiirron eri sovellusten välillä. Kuitenkin sen suurempi 
+	laskentateho vaatii enemmän resursseja verrattuna symmetrisiin salausalgoritmeihin, minkä 
+	vuoksi sitä käytetään usein vain pienten datamäärien salaamiseen tai avaintenvaihtoprotokollassa, 
+	jolla sitten voidaan salata suurempia datamääriä symmetrisellä salauksella.
+	
+	
+	Mahdollinen murtohyökkäys: 
+	
+	Teknologian kehittyessä ja laskentaresurssien lisääntyessä RSA-algoritmin turvallisuus voi 
+	heikentyä. Erityisesti suuren avaimen pituuden valinta on tärkeää vahvan turvallisuuden 
+	varmistamiseksi.
+	
+	Aika: 
+	
+	RSA:n murtaaminen riippuu avaimen pituudesta. Pitkän avaimen tapauksessa brute-force 
+	-hyökkäykset ovat erittäin työläitä tai käytännössä mahdottomia toteuttaa nykyisellä 
+	teknologialla.
+
+
+	Diffie-Hellman:
+	
+	Diffie-Hellman on avaimenvaihtoprotokolla, joka mahdollistaa turvallisen avaimen jakamisen 
+	kahden tai useamman osapuolen välillä julkisen kanavan kautta. Toisin kuin symmetriset 
+	salausalgoritmit, Diffie-Hellman ei käytä suoraan salausalgoritmia viestien salaamiseen, 
+	vaan sen pääasiallinen tarkoitus on luoda ja jakaa yhteinen salainen avain osapuolten välille.
+
+	Toimintaperiaate perustuu matemaattisiin laskutoimituksiin ja modulaariseen eksponentiaatioon. 
+	Osapuolet sopivat yhteisesti julkisista parametreista, kuten suuresta alkuluvusta ja 
+	generaattorista. Jokainen osapuoli generoi myös oman yksityisen avaimen ja luo sen perusteella 
+	julkisen avaimen.
+
+	Osapuolet haluavat jakaa salaisen avaimen keskenään, he vaihtavat julkiset avaimet keskenään. 
+	Käyttämällä omaa yksityistä avaintaan ja vastaanottajan julkista avainta, osapuoli pystyy 
+	laskemaan yhteisen salaisen avaimen. Tämä salainen avain voidaan sitten käyttää symmetristä 
+	salausta varten.
+
+	Tarjoaa keskeisen edun asymmetrisen salauksen algoritmeissa, sillä se mahdollistaa avaimen 
+	jakamisen turvallisesti julkisesti. Se on tärkeä osa monia kryptografisia protokollia, 
+	kuten SSL/TLS ja SSH, jotka tarjoavat turvallisen tiedonsiirron ja etäyhteydet.
+
+	Turvallisuus perustuu laskennallisesti vaikeaan ongelmaan, jota kutsutaan diskreetin 
+	logaritmin ongelmaksi. Tehokkaat kvanttitietokoneet voivat tulevaisuudessa ratkaista tämän 
+	ongelman ja heikentää Diffie-Hellmanin turvallisuutta. Siksi on suositeltavaa seurata alan 
+	kehitystä ja päivittää tarvittaessa vahvempiin avainpituuksiin tai käyttää muita post-
+	kvanttikryptografiaan perustuvia ratkaisuja.
+	
+	
+	Mahdollinen murtohyökkäys: 
+	
+	Diffie-Hellmanin turvallisuus perustuu diskreetin logaritmin ongelman vaikeuteen. Tehokkaat 
+	kvanttitietokoneet voivat tulevaisuudessa ratkaista tämän ongelman ja heikentää algoritmin 
+	turvallisuutta.
+
+	Aika: 
+	
+	Diffie-Hellmanin murtaaminen riippuu käytetystä avaimen pituudesta ja käytettävissä olevista 
+	laskentaresursseista.
+
+
+	ElGamal:
+	
+	ElGamal on asymmetrinen salausalgoritmi, joka perustuu matemaattiseen laskutoimitukseen, 
+	joka tunnetaan diskreettinä logaritmin ongelmana. Algoritmi on nimetty sen kehittäjän 
+	Taher Elgamalin mukaan ja se julkaistiin vuonna 1985.
+
+	Salausalgoritmissa on kaksi avainta: yksityinen avain ja julkinen avain. Yksityinen avain s
+	äilytetään salassa, kun taas julkinen avain jaetaan viestien lähettäjille.
+
+	Viestin salaamiseksi ElGamal-algoritmissa lähetettävä viesti jaetaan satunnaisella session 
+	avaimella. Tämä satunnainen avain generoidaan jokaisen viestin kohdalla. Sen jälkeen viesti 
+	salaataan käyttämällä vastaanottajan julkista avainta sekä satunnaista avainta. Salausprosessi 
+	hyödyntää modulaarista eksponentiaatiota.
+
+	Vastaanottaja voi purkaa salatun viestin käyttämällä omaa yksityistä avaintaan ja laskemalla 
+	salausoperaation käänteistoiminnon. Näin alkuperäinen viesti palautuu takaisin.
+
+	Algoritmi on tunnettu erityisesti sen kyvystä tarjota suhteellisen hyvä tietoturva, 
+	erityisesti kun käytetään riittävän pitkiä avaimia. Se tarjoaa myös digitaalisen 
+	allekirjoituksen ominaisuuden, jota voidaan käyttää viestien aitouden ja eheyden 
+	varmistamiseen.
+
+	Salausalgoritmi on laskennallisesti raskaampi kuin jotkut muut asymmetriset salausalgoritmit, 
+	kuten RSA. Lisäksi sen avainten hallinta ja tehokas toteutus voivat olla monimutkaisempia. 
+	Siksi sen käyttöön liittyy suorituskyky- ja tehokkuushaasteita, etenkin suurten datamäärien 
+	käsittelyssä.
+
+	Edelleen tärkeä osa kryptografista tutkimusta ja käytäntöä, ja sitä voidaan käyttää monissa 
+	sovelluksissa, kuten salatussa viestinnässä, digitaalisissa allekirjoituksissa ja turvallisessa 
+	avaimenvaihdossa.
+	
+	
+	Mahdollinen murtohyökkäys: 
+	
+	ElGamalin turvallisuus perustuu vaikeuteen ratkaista diskreetin logaritmin ongelmaa. 
+	Tehokkaat kvanttitietokoneet voivat tulevaisuudessa ratkaista tämän ongelman ja heikentää 
+	algoritmin turvallisuutta.
+
+	Aika: 
+	
+	ElGamalin murtaaminen riippuu käytetystä avaimen pituudesta ja käytettävissä olevista 
+	laskentaresursseista.
+	
+	
+	DSA:
+	
+	Digital Signature Algorithm (DSA) on asymmetrinen salausalgoritmi, joka on suunniteltu 
+	digitaalisten allekirjoitusten luomiseen ja varmentamiseen. Se kehitettiin Yhdysvaltain 
+	kansallisen turvallisuusviraston (NSA) ja National Institute of Standards and Technology 
+	(NIST) toimesta.
+
+	Diskreetin logaritmin ongelmaan ja on erityisesti suunniteltu tarjoamaan tietoturvaa 
+	digitaalisten allekirjoitusten yhteydessä. Algoritmi käyttää moduloaritmetiikkaa ja suuriin 
+	alkulukuihin perustuvia laskutoimituksia.
+
+	Perustuu käyttäjän yksityisen avaimen ja julkisen avaimen parin luomiseen. Viestin 
+	allekirjoittamiseksi lähettäjä käyttää yksityistä avaintaan ja luo digitaalisen
+	allekirjoituksen. Allekirjoitus sisältää tietoa viestistä, joten sen tarkistaminen mahdollistaa 
+	viestin eheyden todentamisen.
+
+	Vastaanottaja varmentaa digitaalisen allekirjoituksen käyttämällä lähettäjän julkista avainta. 
+	Jos allekirjoitus on validi, viestin alkuperäisyys voidaan varmistaa. DSA mahdollistaa myös 
+	nimettömän varmenteen luomisen, joka ei paljasta lähettäjän henkilöllisyyttä.
+
+	Käytetään erilaisissa sovelluksissa, kuten sähköpostien turvallisessa lähettämisessä, 
+	verkkopalveluiden varmenteiden luomisessa ja digitaalisessa dokumenttien allekirjoittamisessa. 
+	Algoritmin tietoturva perustuu diskreetin logaritmin laskennalliseen vaikeuteen, mikä 
+	tekee siitä turvallisen käyttää, kunhan käytetään riittävän pitkiä avaimia ja turvallista 
+	avaintenhallintaa.
+
+	Käyttöönotto vaatii tarkkaa avainten generointia ja varmentamista sekä asianmukaista avainten 
+	hallintaa. Lisäksi DSA ei tue suoraan salausoperaatioita, joten sen käyttöön voi liittyä 
+	muita salausalgoritmeja tarvittaessa.
+
+	Tärkeä digitaalisten allekirjoitusten toteuttamiseen käytetyistä algoritmeista, ja sitä 
+	käytetään laajasti tietoturvallisessa viestinnässä ja tietojen varmentamisessa.
+	
+	
+	Mahdollinen murtohyökkäys: 
+	
+	DSA:n turvallisuus perustuu vaikeuteen ratkaista diskreetin logaritmin ongelmaa. Tehokkaat 
+	kvanttitietokoneet voivat tulevaisuudessa ratkaista tämän ongelman ja heikentää algoritmin 
+	turvallisuutta.
+
+	Aika: 
+	
+	DSA:n murtaaminen riippuu käytetystä avaimen pituudesta ja käytettävissä olevista 
+	laskentaresursseista.
+	
+	
+	ECC:
+	
+	ECC (Elliptic Curve Cryptography) on asymmetrinen salausalgoritmi, joka perustuu elliptisten 
+	käyrien matemaattisiin ominaisuuksiin. ECC:llä voidaan suorittaa avainten vaihto, digitaalinen
+	allekirjoitus ja salaus. Se on suosittu salausalgoritmi, jota käytetään laajasti tietoturvallisuuden 
+	eri sovelluksissa, kuten verkkoprotokollien, mobiililaitteiden ja langattomien verkkojen 
+	suojauksessa.
+
+	Eroaa perinteisistä asymmetrisistä salausalgoritmeista, kuten RSA:sta, siinä, että se tarjoaa 
+	saman tietoturvatason pienemmillä avainpituuksilla. Tämä tekee ECC:stä erityisen tehokkaan 
+	resurssien rajoitetuissa ympäristöissä, kuten älypuhelimissa ja IoT-laitteissa, joissa laskentateho 
+	ja muistiresurssit ovat rajalliset.
+
+	Hyödyntää elliptisiä käyriä, jotka ovat matemaattisia rakenteita, joilla on erityisiä ominaisuuksia. 
+	Nämä käyrät tarjoavat matemaattisen perustan avainten generoimiseen, salaamiseen ja purkamiseen. 
+	ECC-algoritmit käyttävät diskreettiä logaritmioperaatiota elliptisellä käyrällä, mikä tekee niistä 
+	erittäin vaikeita murtaa.
+
+	Tarjoaa saman tietoturvatason pienemmillä avainpituuksilla verrattuna perinteisiin 
+	salausalgoritmeihin, mikä säästää tallennustilaa ja laskentaresursseja. Toiseksi, ECC-algoritmit 
+	ovat nopeampia suorittaa, mikä tekee niistä sopivia resurssien rajoitetuille järjestelmille 
+	ECC:llä on vahva vastustuskyky kvanttitietokoneiden hyökkäyksiä vastaan, mikä tekee siitä 
+	houkuttelevan vaihtoehdon tulevaisuuden tietoturvatarpeisiin.
+
+	Haasteita sen käyttöönotto ja ymmärtäminen vaativat erikoistunutta osaamista, koska elliptiset 
+	käyrät ja niihin liittyvät matemaattiset operaatiot eivät ole välttämättä intuitiivisia. 
+	Virheet ECC-implementoinneissa voivat johtaa tietoturvaongelmiin, joten oikeaoppinen toteutus 
+	ja testaus ovat tärkeitä.	
+	
+	
+	Mahdollinen murtohyökkäys: 
+	
+	ECC perustuu vaikeuteen ratkaista elliptisen käyrän diskreetin logaritmin ongelmaa. Tehokkaat 
+	kvanttitietokoneet voivat tulevaisuudessa ratkaista tämän ongelman ja heikentää algoritmin 
+	turvallisuutta.
+	
+	Aika: 
+	
+	ECC:n murtaaminen riippuu käytetystä avaimen pituudesta ja käytettävissä olevista 
+	laskentaresursseista. Pienikokoiset ECC-avaimet tarjoavat korkean turvallisuuden pienemmällä 
+	laskentateholla verrattuna perinteisiin salausalgoritmeihin.
+
+
+	Mahdollinen murtohyökkäys: 
+	
+	PGP ja GPG käyttävät yleensä RSA- tai ElGamal-algoritmeja salauksen ja digitaalisen 
+	allekirjoituksen toteuttamiseen. Niiden turvallisuus riippuu valitusta salausalgoritmista 
+	ja avaimen pituudesta.
+
+	Aika: 
+	
+	PGP:n ja GPG:n murtaaminen riippuu käytetystä salausalgoritmista ja avaimen pituudesta.
+
+
+	GPG:
+	
+	GNU Privacy Guard (GPG) on avoimen lähdekoodin ohjelmisto, joka tarjoaa tietoturvapalveluita, 
+	kuten salaus, digitaalinen allekirjoitus ja tiedostojen integriteetin tarkistus. GPG on 
+	suunniteltu käytettäväksi sähköpostiviestien ja tiedostojen suojaamiseen.
+
+	Avoimen standardin nimeltään OpenPGP (Pretty Good Privacy), joka määrittelee menetelmät 
+	salaukseen ja digitaalisiin allekirjoituksiin. GPG tarjoaa käyttäjille mahdollisuuden 
+	luoda avainparit, joita käytetään salaamiseen ja allekirjoittamiseen. Avainpari koostuu 
+	julkisesta avaimesta, jota käytetään viestien salauksessa, ja yksityisestä avaimesta, 
+	joka säilytetään salassa ja jota käytetään viestien purkamiseen ja allekirjoitusten 
+	luomiseen.
+
+	Kun käyttäjä haluaa lähettää salattuja viestejä tai tiedostoja, hän käyttää vastaanottajan 
+	julkista avainta salatakseen viestin. Vastaanottaja voi sitten käyttää omaa yksityistä 
+	avaintaan purkaakseen viestin takaisin alkuperäiseen muotoonsa. Mahdollistaa digitaalisten 
+	allekirjoitusten luomisen, jolloin viestin vastaanottaja voi varmistua viestin lähettäjän 
+	henkilöllisyydestä ja viestin eheydestä.
+
+	Käyttöliittymä tarjoaa erilaisia toimintoja avainhallintaan, salaukseen, allekirjoittamiseen 
+	ja salaamattomien viestien allekirjoituksen tarkistamiseen. Ohjelmisto tukee myös 
+	joukkoistamista, joka mahdollistaa avainten jakamisen ja luottamuksen verkostojen rakentamisen.
+
+	Tärkeä rooli tietoturvassa, erityisesti sähköpostiviestien salauksessa ja digitaalisissa 
+	allekirjoituksissa. Se tarjoaa käyttäjille luotettavan ja helppokäyttöisen tavan suojata 
+	viestejä ja tiedostoja sekä varmistaa niiden aitous. GPG:n avoimen lähdekoodin luonne 
+	takaa myös tarkastettavuuden ja riippumattomuuden, mikä on tärkeää luotettavan 
+	tietoturvaratkaisun kannalta.
+	
+
+	Mahdollinen murtohyökkäys: 
+	
+ 	GPG ja PGP (Pretty Good Privacy) käyttävät yleensä RSA- tai ElGamal-algoritmeja salauksen 
+ 	ja digitaalisen allekirjoituksen toteuttamiseen. Niiden turvallisuus riippuu valitusta 
+ 	salausalgoritmista ja avaimen pituudesta.
+
+	Aika: 
+	
+	PGP:n ja GPG:n murtaaminen riippuu käytetystä salausalgoritmista ja avaimen pituudesta.
+	
+	
+	DHIES:
+	
+	DHIES (Diffie-Hellman Integrated Encryption Scheme) on asymmetrinen salausalgoritmi, joka 
+	yhdistää Diffie-Hellmanin avaintenvaihdon ja symmetrisen salaamisen periaatteet yhteen 
+	kokonaisuuteen. Se tarjoaa sekä salauksen että allekirjoituksen ominaisuudet.
+
+	Avaintenvaihtoprotokolla, joka mahdollistaa kahden osapuolen turvallisen avaintenvaihdon 
+	julkisen kanavan kautta. Tämä tarkoittaa, että kaksi osapuolta voivat luoda yhteisen 
+	salausavaimen keskinäisen sopimuksen avulla, vaikka heidän välillään ei ole aiemmin 
+	sovittua salausalgoritmia tai avainta.
+
+	Yhteinen salausavain on luotu, DHIES käyttää sitä symmetrisen salaamisen suorittamiseen. 
+	Salattavan viestin salaaminen ja purkaminen tapahtuvat saman salausavaimen avulla, mikä 
+	mahdollistaa turvallisen viestien vaihdon ilman, että avainta tarvitsee jakaa julkisesti 
+	tai pitää salassa.
+
+	Turvallisuus perustuu diskreetin logaritmin ongelmaan. Tällä hetkellä tiedetään 
+	tehokkaita klassisia ja kvanttitietokoneisiin perustuvia murtohyökkäyksiä diskreetin 
+	logaritmin ongelman ratkaisemiseksi, mikä voi heikentää DHIES:n turvallisuutta tulevaisuudessa.
+
+	Voidaan hyödyntää muun muassa tiedonsiirrossa, sähköpostiviestinnässä, tiedostojen 
+	salaamisessa ja digitaalisten allekirjoitusten luomisessa. Sen turvallisuus ja 
+	murtohyökkäysaika riippuvat käytetystä avaimen pituudesta ja saatavilla olevista 
+	laskentaresursseista.
+
+
+	Mahdollinen murtohyökkäys: 
+	
+	DHIES perustuu vaikeuteen ratkaista diskreetin logaritmin ongelmaa. Tällä hetkellä ei ole 
+	tiedossa tehokkaita klassisia tai kvanttitietokoneisiin perustuvia murtohyökkäyksiä, 
+	jotka pystyisivät murtamaan DHIES:n turvallisuuden käytännön aikarajoissa. Kuitenkin 
+	kvanttitietokoneiden kehittyessä voi olla mahdollista, että ne voivat tulevaisuudessa 
+	murtamaan DHIES:n tehokkaasti.
+	
+	Aika: 
+	
+	DHIES:n murtaaminen riippuu käytetystä avaimen pituudesta ja käytettävissä olevista 
+	laskentaresursseista. Mitä pidempi avain, sitä vaikeampi sen murtaminen on. Pitkän avaimen 
+	tapauksessa bruteforce-tyyppiset hyökkäykset ovat erittäin hidaita ja käytännössä 
+	mahdottomia toteuttaa.
+
+	ECDH:
+
+	ECDH (Elliptic Curve Diffie-Hellman) on asymmetrinen avaintenvaihtoprotokolla, joka 
+	perustuu elliptisen käyrän kryptografian periaatteisiin. Se mahdollistaa kahden osapuolen 
+	turvallisen avaintenvaihdon julkisen kanavan kautta.
+
+	Toimintaperiaate on samankaltainen kuin perinteisessä Diffie-Hellmanin avaintenvaihdossa, 
+	mutta siinä käytetään elliptisiä käyriä ja niiden matemaattisia ominaisuuksia. Elliptisen 
+	käyrän kryptografia tarjoaa pienempiä avaimen pituuksia ja laskentatehoa verrattuna 
+	perinteiseen modulo-operaatioon perustuvaan Diffie-Hellmaniin.
+
+	Avaintenvaihdon aikana osapuolet valitsevat yhteisen parametrin, kuten elliptisen käyrän 
+	ja generaattoripisteen, sekä oman salaisen avaimen. Näiden parametrien perusteella 
+	osapuolet laskettavat julkisen avaimensa ja vaihtavat ne keskenään. Tämän seurauksena he 
+	voivat molemmat laskea yhteisen salaisen avaimen, jota voidaan käyttää symmetriseen salaamiseen 
+	tai muihin kryptografisiin operaatioihin.
+
+	Turvallisuus perustuu elliptisen käyrän diskreetin logaritmin ongelmaan, joka on vaikeasti 
+	ratkaistava matemaattinen ongelma. Tällä hetkellä tiedetään tehokkaita kvanttitietokoneisiin 
+	perustuvia murtohyökkäyksiä elliptisen käyrän diskreetin logaritmin ongelman ratkaisemiseksi, 
+	mikä voi heikentää ECDH:n turvallisuutta tulevaisuudessa.
+
+	Käytetään laajasti salausavainten vaihdossa ja salatun viestinnän toteuttamisessa. Tarjoaa 
+	tehokkaan ja turvallisen avaintenvaihtoratkaisun, joka soveltuu erityisesti resurssirajoitteisiin 
+	ympäristöihin, kuten mobiililaitteisiin ja sulautettuihin järjestelmiin.
+	
+
+	Mahdollinen murtohyökkäys: 
+	
+	ECDH perustuu vaikeuteen ratkaista elliptisen käyrän diskreetin logaritmin ongelmaa. Tehokkaat 
+	kvanttitietokoneet voisivat tulevaisuudessa ratkaista tämän ongelman ja heikentää algoritmin 
+	turvallisuutta.
+	Aika: 
+	
+	ECDH:n murtaaminen riippuu käytetystä avaimen pituudesta ja käytettävissä olevista 
+	laskentaresursseista. Pienikokoiset ECDH-avaimet tarjoavat korkean turvallisuuden pienemmällä 
+	laskentateholla verrattuna perinteisiin salausalgoritmeihin.
+
+	
+	ECDSA:
+	
+	ECDSA (Elliptic Curve Digital Signature Algorithm) on asymmetrinen digitaalisen allekirjoituksen 
+	algoritmi, joka perustuu elliptisen käyrän kryptografian periaatteisiin. Se mahdollistaa viestien 
+	ja tietojen aitouden, eheyden ja lähettäjän todentamisen digitaalisesti.
+
+	Toimii samalla periaatteella kuin perinteinen digitaalinen allekirjoitusjärjestelmä, mutta 
+	käyttää elliptisiä käyriä ja niiden matemaattisia ominaisuuksia. Allekirjoittaja luo julkisen 
+	ja yksityisen avaimen parin, jossa yksityinen avain pidetään salassa ja julkista avainta jaetaan 
+	muille käyttäjille. Allekirjoittaja käyttää yksityistä avaintaan allekirjoituksen luomiseen, ja 
+	vastaanottaja voi käyttää julkista avainta varmistaakseen allekirjoituksen aitouden.
+
+	Turvallisuus perustuu elliptisen käyrän diskreetin logaritmin ongelmaan, joka on vaikeasti 
+	ratkaistava matemaattinen ongelma. Algoritmi tarjoaa vahvan digitaalisen allekirjoituksen ja 
+	on käytössä monissa turvallisissa viestintäprotokollissa ja kryptografisissa sovelluksissa.
+
+	Etuna on sen tehokkuus ja pienempi avaimen pituus verrattuna perinteisiin digitaalisiin 
+	allekirjoitusjärjestelmiin. Se sopii erityisesti resurssirajoitteisiin ympäristöihin, kuten 
+	mobiililaitteisiin ja sulautettuihin järjestelmiin, joissa laskentatehon ja muistin rajoitukset 
+	ovat merkittäviä tekijöitä.
+
+
+	Mahdollinen murtohyökkäys: 
+	
+	ECDSA perustuu vaikeuteen ratkaista elliptisen käyrän diskreetin logaritmin ongelmaa. Tehokkaat 
+	kvanttitietokoneet voisivat tulevaisuudessa ratkaista tämän ongelman ja heikentää algoritmin 
+	turvallisuutta.
+	
+	Aika: 
+	
+	ECDSA:n murtaaminen riippuu käytetystä avaimen pituudesta ja käytettävissä olevista 
+	laskentaresursseista. Pienikokoiset ECDSA-avaimet tarjoavat korkean turvallisuuden pienemmällä 
+	laskentateholla verrattuna perinteisiin salausalgoritmeihin.
+
+
+Julkisen ja yksityisen avaimen käyttö:
+
+	
+	Keskeinen osa asymmetristä salausta ja digitaalista allekirjoitusta. Tässä käsitellään yleisesti 
+	julkisen ja yksityisen avaimen toimintaa ja niiden roolia tietoturvassa.
+
+	Asymmetrisessä salauksessa jokaisella käyttäjällä on avainpari, joka koostuu julkisesta avaimesta 
+	ja yksityisestä avaimesta. Julkinen avain on jaettavissa vapaasti kaikkien käyttäjien kesken, 
+	kun taas yksityinen avain on tarkoitettu vain avaimen omistajalle ja sitä ei tulisi paljastaa 
+	kenellekään.
+
+	Julkista avainta käytetään viestin salaamiseen tai digitaalisen allekirjoituksen todentamiseen. 
+	Kun viesti salataan julkisella avaimella, vain vastaanottajan yksityisellä avaimella voidaan 
+	purkaa salaaminen ja saada viesti takaisin alkuperäiseen muotoonsa. Tämä mahdollistaa 
+	luottamuksellisen viestinnän, koska vain vastaanottaja, jolla on oikea yksityinen avain, 
+	pystyy lukemaan viestin.
+
+	Digitaalisessa allekirjoituksessa lähettäjä käyttää yksityistä avaintaan allekirjoituksen 
+	luomiseen. Allekirjoitus sisältää tietoja, jotka varmistavat lähettäjän identiteetin ja viestin 
+	eheyden. Vastaanottaja voi tarkistaa allekirjoituksen käyttämällä lähettäjän julkista avainta ja 
+	varmistaa, että viesti ei ole muuttunut eikä ole peräisin väärentäjältä.
+
+	Julkisen ja yksityisen avaimen käyttö tarjoaa asymmetrisen salauksen ja digitaalisen 
+	allekirjoituksen etuja, kuten luottamuksellisuutta, eheyttä ja autentikointia. Julkisen 
+	avaimen avulla viestin salaaminen tai allekirjoittaminen on helppoa, kun taas yksityinen 
+	avain säilyy salassa ja takaa tiedon luotettavuuden ja turvallisuuden.
+	
+
+Salausprotokollat:
+
+
+	Ovat menetelmiä, joita käytetään tietojen salaukseen ja turvalliseen tiedonsiirtoon verkoissa. 
+	Ne määrittelevät säännöt ja vaiheet, joita seurataan tiedon salaamiseksi, lähetettäväksi ja 
+	purkamiseksi vastaanotettaessa. Tässä on muutamia yleisesti käytettyjä salausprotokollia
+
+	Tässä muutamia esimerkkejä salausprotokollista, ja on olemassa monia muita protokollia ja 
+	menetelmiä, joita käytetään turvalliseen tiedonsiirtoon ja tietojen salaamiseen verkoissa. 
+	Protokollan valinta riippuu käyttötarkoituksesta, tarvittavasta tietoturvatasosta ja 
+	käytettävissä olevista resursseista. On tärkeää valita sopiva salausprotokolla ja noudattaa 
+	hyviä tietoturvakäytäntöjä varmistaakseen turvallisen tiedonsiirron ja tietojen säilymisen 
+	luottamuksellisina.
+	
+	SSL/TLS:
+
+	SSL/TLS (Secure Sockets Layer/Transport Layer Security) on salaustekniikka, jota käytetään 
+	varmistamaan turvallinen tiedonsiirto verkkopalveluiden välillä, kuten verkkosivustojen ja 
+	asiakasohjelmien. Tarjoaa salausta, joka suojaa tietoa lähettäjältä vastaanottajalle. 
+	Tämä estää ulkopuolisia tahoja lukemasta tai muokkaamasta siirrettyä tietoa. SSL/TLS varmistaa 
+	myös viestin eheyden, mikä tarkoittaa, että tietoa ei ole muutettu lähetyksen aikana.
+	Tarjoaa osapuolten todennuksen, mikä takaa, että verkkopalvelu on aito ja luotettava.
+
+	IPsec:
+
+	IPsec (Internet Protocol Security) on turvallisuusprotokolla, joka tarjoaa tietoturvapalveluita 
+	IP-verkkokerroksella. Se mahdollistaa IP-pakettien salauksen, mikä tarkoittaa, että lähetetty 
+	tieto on salattu ja suojattu ulkopuolisilta tahoilta. Takaa myös pakettien eheyden, mikä tarkoittaa, 
+	että tietoa ei ole muutettu siirron aikana. Tarjoaa myös osapuolten todennuksen, mikä varmistaa, 
+	että lähettäjä ja vastaanottaja ovat luotettavia.
+
+	SSH:
+
+	SSH (Secure Shell) on protokolla, joka tarjoaa turvallisen yhteyden luomisen etäpalvelimille 
+	ja tiedonsiirron verkossa. Se tarjoaa salauksen, joka suojaa tiedon siirron aikana. Tämä 
+	estää luvattoman pääsyn ja salakuuntelun. SSH mahdollistaa myös käyttäjän todennuksen, mikä 
+	takaa, että vain oikeutetut käyttäjät voivat saada pääsyn etäpalvelimelle. Tarjoaa myös 
+	suojausominaisuuksia, kuten tiedonsiirron eheyden varmistamisen.
+	
+	PGP:
+
+	PGP (Pretty Good Privacy) on salaustekniikka, jota käytetään sähköpostiviestien salaamiseen 
+	ja digitaaliseen allekirjoittamiseen. Perustuu asymmetriseen salaukseen, jossa käytetään 
+	julkista ja yksityistä avainta. PGP:n avulla viestit voidaan salata lähettäjän julkisella 
+	avaimella, ja vain vastaanottaja, jolla on vastaava yksityinen avain, voi purkaa viestin.
+	Tarjoaa digitaalisen allekirjoituksen, joka todistaa viestin lähettäjän henkilöllisyyden ja 
+	varmistaa viestin eheyden. S/MIME (Secure/Multipurpose Internet Mail Extensions)
+
+	S/MIME on protokolla, joka tarjoaa sähköpostiviestien salausta, allekirjoitusta ja 
+	turvallisuusominaisuuksia. Käyttää asymmetristä salausjärjestelmää ja digitaalisia sertifikaatteja
+	viestien salaamiseen ja todentamiseen. S/MIME mahdollistaa viestien salaamisen lähettäjän 
+	julkisella avaimella ja purkamisen vastaanottajan yksityisellä avaimella. Lisäksi mahdollistaa 
+	viestien allekirjoittamisen, joka varmistaa lähettäjän henkilöllisyyden ja viestin eheyden.
+	
+	
+Salaustekniikoiden soveltaminen tietoliikenteessä:	
+	
+	
+	Salaustekniikoiden soveltaminen tietoliikenteessä on keskeinen osa tietoturvaa ja 
+	yksityisyydensuojaa verkossa. Näitä tekniikoita voidaan soveltaa eri tasoilla ja eri 
+	protokollien avulla varmistamaan turvallinen tiedonsiirto. Tässä on muutamia esimerkkejä 
+	salaustekniikoiden soveltamisesta tietoliikenteessä.
+	
+	Näiden tekniikoiden käyttö on erityisen tärkeää, kun siirretään arkaluontoisia tai henkilökohtaisia 
+	tietoja verkossa. Salaustekniikoiden avulla voidaan luoda luottamuksellinen ja turvallinen 
+	tietoliikenneympäristö, jossa käyttäjät voivat kommunikoida ja vaihtaa tietoja suojatusti.
+	
+	
+	Verkkokerros:
+
+	IPsec-protokolla tarjoaa turvallisuuspalveluita IP-verkkokerroksella. Se voi salata IP-paketit 
+	ja varmistaa niiden eheyden sekä tarjota osapuolten todennuksen. IPsec voidaan käyttää esimerkiksi 
+	VPN-yhteyksissä, jolloin koko verkkoliikenne salataan ja suojataan ulkopuolisilta tahoilta.
+	
+	Kuljetuskerros:
+
+	SSL/TLS-protokolla mahdollistaa salaamisen, viestin eheyden ja osapuolten todennuksen palveluiden 
+	välillä, kuten verkkosivustojen ja asiakasohjelmien välillä. Se luo turvallisen kanavan 
+	tiedonsiirrolle ja estää luvattoman pääsyn ja tietojen muokkaamisen.
+
+	Sovelluskerros:
+
+	SSH-protokolla tarjoaa turvallisen etäkäyttöyhteyden hallintaan ja tiedonsiirtoon. Se salaa 
+	tiedonsiirron ja mahdollistaa käyttäjän todennuksen, jotta vain oikeutetut käyttäjät voivat 
+	saada pääsyn etäpalvelimiin.
+	PGP ja S/MIME ovat salaustekniikoita, joita voidaan käyttää sähköpostiviestien salaamiseen ja 
+	digitaaliseen allekirjoittamiseen. Ne tarjoavat turvallisen tavan lähettää arkaluontoisia 
+	sähköpostiviestejä ja varmistaa viestien aitous ja eheys.
+
+
+Salaus tiedonsiirrossa:
+
+
+	Menetelmä jossa tiedot muunnetaan salaamattomasta muodosta salattuun muotoon ennen niiden 
+	lähettämistä verkossa. Tämä on tärkeä tietoturvatoimenpide, joka suojaa arkaluontoista 
+	tietoa luvattomalta pääsyltä ja tietomurroilta.
+
+	Tiedonsiirron salauksessa käytetään salausalgoritmeja, jotka muuttavat selkokielisen datan 
+	epäselkeäksi muodoksi, jota on vaikea tulkita ilman salaista avainta. Salausprosessi perustuu 
+	matemaattisiin laskutoimituksiin, jotka tekevät tiedoista kryptografisesti turvallisia.
+
+	Salausmenetelmä voidaan toteuttaa eri tasoilla, kuten verkkokerroksella, kuljetuskerroksella 
+	tai sovelluskerroksella. Esimerkiksi Secure Sockets Layer/Transport Layer Security (SSL/TLS) 
+	-protokolla tarjoaa salausta verkkokerroksella ja varmistaa turvallisen yhteyden palvelinten ja 
+	asiakasohjelmien välillä. SSL/TLS käyttää symmetristä ja asymmetristä salausta, digitaalisia 
+	sertifikaatteja ja avainvaihtoprotokollia tiedonsiirron suojaamiseksi.
+
+	Salaus tiedonsiirrossa tarjoaa useita etuja. Ensinnäkin, se varmistaa luottamuksellisuuden, 
+	jolloin vain luvan saaneet osapuolet voivat lukea ja tulkita tiedot. Toiseksi, se tarjoaa 
+	eheyden, joka tarkoittaa, että tiedot pysyvät muuttumattomina lähetyksen aikana. Kolmanneksi, 
+	se mahdollistaa osapuolten todennuksen, jolloin varmistetaan, että viestintä tapahtuu aitojen 
+	ja oikeutettujen osapuolten välillä.
+
+	Tällä hetkellä suositellaan käytettäväksi Advanced Encryption Standard (AES) -algoritmia, 
+	joka on laajalti hyväksytty ja turvallinen salaustekniikka. Lisäksi on tärkeää pitää 
+	salaustekniikat ajan tasalla ja päivittää ne tarvittaessa uudempiin ja turvallisempiin 
+	versioihin, koska tietoturvahyökkäykset kehittyvät jatkuvasti.
+	
+
+Salausmenetelmien käyttö tietoliikenteen salauksessa
+
+
+	 Tietoliikenteen salauksessa varmistamaan tiedon luottamuksellisuus, eheys ja autenttisuus. 
+	 Salausmenetelmän valinta riippuu useista tekijöistä, kuten tietoliikenteen tyyppi, 
+	 turvallisuusvaatimukset, käytettävissä olevat resurssit ja sovelluksen konteksti.
+
+	Yleisesti salausta voidaan toteuttaa kahdella eri tavalla: symmetrisellä salauksella ja 
+	asymmetrisellä salauksella.
+
+	Symmetrinen salaus perustuu siihen, että tiedon salaamiseen ja purkamiseen käytetään samaa 
+	salausavainta. Tämä salausmenetelmä on nopea ja tehokas, mutta edellyttää turvallisen 
+	salausavaimen jakamista salausosapuolten välillä. Suositeltavia symmetrisiä salausalgoritmeja 
+	ovat esimerkiksi AES (Advanced Encryption Standard) ja 3DES (Triple Data Encryption Standard).
+
+	Asymmetrinen salaus, jota kutsutaan myös julkisen avaimen salaukseksi, perustuu siihen, että 
+	salaamiseen ja purkamiseen käytetään erillisiä avaimia: julkinen avain ja yksityinen avain. 
+	Julkinen avain on jaettu avain, jota voidaan käyttää tiedon salaamiseen, kun taas yksityinen 
+	avain on salatun tiedon purkamiseen tarvittava salainen avain. Tämä menetelmä mahdollistaa 
+	turvallisen viestinnän ilman tarvetta jakaa salaisia avaimia. Suosittuja asymmetrisiä 
+	salausalgoritmeja ovat RSA (Rivest-Shamir-Adleman), Diffie-Hellman ja Elliptic Curve 
+	Cryptography (ECC).
+
+	Menetelmien valinta riippuu sovelluksen tarpeista. Esimerkiksi SSL/TLS-protokolla käyttää 
+	yhdistelmää symmetristä ja asymmetristä salausta varmistaakseen turvallisen tiedonsiirron 
+	verkkokerroksella. PGP ja GPG puolestaan käyttävät asymmetristä salakirjoitusta sähköpostiviestien 
+	salaamiseen ja digitaaliseen allekirjoittamiseen.
+
+	Sisältää avainten hallinnan, avainten vaihdon protokollat, salausalgoritmien vahvuuden ja 
+	käytettävissä olevat resurssit. Lisäksi on suositeltavaa noudattaa alan parhaita käytäntöjä ja 
+	turvallisuusstandardeja varmistaakseen asianmukaisen tietoliikenteen salauksen.
+
+
+Salausmenetelmien valinta riippuen sovelluksesta:
+
+
+	Turvallisuusvaatimukset: 
+	
+	Eri sovelluksilla voi olla erilaiset turvallisuusvaatimukset. Jotkut sovellukset, kuten 
+	sähköposti tai verkkopankki, voivat vaatia vahvaa salausta ja tarkkaa tiedon eheyden varmistusta. 
+	Toiset sovellukset, kuten julkiset keskustelupalstat, voivat vaatia enemmän keskittynyttä huomiota 
+	tiedon luottamuksellisuuteen.
+
+	Suorituskyky: 
+	
+	Joillakin salaustekniikoilla voi olla suurempi laskennallinen kuormitus kuin toisilla. Jos 
+	sovelluksen on käsiteltävä suuria määriä tietoa tai tarjottava reaaliaikaista tiedonsiirtoa, 
+	kannattaa valita tehokas ja nopea salaustekniikka.
+
+	Resurssien saatavuus: 
+	
+	Salausmenetelmän valintaan vaikuttaa myös käytettävissä olevat resurssit, kuten laskentateho, 
+	muisti tai verkkoyhteyden kaistanleveys. Joissakin ympäristöissä, kuten IoT-laitteissa tai 
+	rajoitetuissa järjestelmissä, on otettava huomioon rajoitetut resurssit ja valittava kevyempi 
+	salaustekniikka.
+
+	Yhteensopivuus: 
+	
+	Salaustekniikan valinnassa on otettava huomioon sen yhteensopivuus käytössä olevien järjestelmien, 
+	protokollien ja algoritmien kanssa. Esimerkiksi jos sovellus käyttää joitakin standardoituja 
+	salaustekniikoita, on hyvä noudattaa näitä standardeja yhteensopivuuden varmistamiseksi.
+
+	Tulevaisuuden kehitys: 
+	
+	Salaustekniikoiden turvallisuus voi heikentyä ajan myötä, kun uusia murto- tai heikkoushyökkäyksiä 
+	kehitetään. On tärkeää seurata alan kehitystä ja valita salaustekniikka, joka on vahva nykyhetkellä 
+	ja joka todennäköisesti säilyttää turvallisuutensa myös tulevaisuudessa.
+
+
+Tiedonsiirron suojaaminen avoimissa verkko-olosuhteissa:
+
+
+	SSL/TLS-protokolla: 
+	
+	SSL (Secure Sockets Layer) tai sen seuraaja TLS (Transport Layer Security) on yleisesti käytetty 
+	salaustekniikka, jota käytetään turvallisen yhteyden muodostamiseen palvelinten ja asiakasohjelmien 
+	välillä. SSL/TLS tarjoaa salauksen, viestin eheyden varmistuksen ja osapuolten todennuksen.
+
+	Julkisen avaimen infrastruktuuri (PKI): 
+
+	PKI on järjestelmä, joka mahdollistaa digitaalisten sertifikaattien luomisen, hallinnan ja 
+	todentamisen. PKI:ä käytetään yleisesti salaustekniikoissa, kuten SSL/TLS, jossa varmistetaan 
+	palvelimen ja asiakkaan todennus ja salaisen avaimen jakaminen.
+
+	VPN (Virtual Private Network): 
+
+	VPN on tekniikka, joka luo turvallisen ja yksityisen yhteyden julkisen verkon yli. VPN käyttää 
+	salausta ja tunnelointia tiedonsiirron suojaamiseksi avoimissa verkko-olosuhteissa. Tämä mahdollistaa 
+	turvallisen pääsyn yritysverkkoihin tai muuhun suojattuun tietoverkkoon.
+
+	Salausprotokollat ja -algoritmit: 
+	
+	Käytä vahvoja salaustekniikoita, kuten AES (Advanced Encryption Standard), joka on nykyään suositeltu 
+	symmetrinen salausalgoritmi. Varmista, että käytettävät salaustekniikat ovat turvallisia ja vastaavat 
+	nykyisiä standardeja.
+	
+	Tietoturvakäytännöt ja hallintaprosessit: 
+	
+	Verkkoinfrastruktuurin tietoturvakäytännöt määrittävät organisaation politiikat ja säännöt 
+	tietoturvan toteuttamiseksi. Näihin kuuluu esimerkiksi vahvojen salasanojen käyttö, jossa 
+	käyttäjät velvoitetaan valitsemaan monimutkaisia ja ainutlaatuisia salasanoja. Tämä auttaa 
+	estämään luvattoman pääsyn järjestelmiin. Käyttäjien tunnistaminen ja todennusmenetelmät ovat 
+	myös tärkeitä, jotta voidaan varmistaa, että vain oikeutetut käyttäjät pääsevät tietoihin ja 
+	palveluihin. Tietoturva-auditoinnit suoritetaan säännöllisesti tarkistamaan järjestelmien ja 
+	prosessien tietoturvatilanne. Jatkuvan seurannan käytäntöjen noudattaminen auttaa havaitsemaan ja 
+	reagoimaan nopeasti mahdollisiin tietoturvapoikkeamiin.
+
+	Palo- ja verkkosuojaus: 
+
+	Palo- ja verkkosuojausmenetelmät ovat tärkeitä komponentteja tiedonsiirron suojaamisessa avoimissa 
+	verkko-olosuhteissa. Palomuurit toimivat portinvartijoina verkossa, valvovat liikennettä ja estävät 
+	luvatonta pääsyä verkkoinfrastruktuuriin. Ne määrittävät säännöt, jotka ohjaavat verkkoliikenteen 
+	virtausta ja suojaavat järjestelmiä haitalliselta liikenteeltä. Tunkeutumisen havaitsemisjärjestelmät 
+	(IDS) ja tunkeutumisen ehkäisemisjärjestelmät (IPS) havaitsevat ja estävät tunkeilijoita tai haitallista 
+	toimintaa verkossa. Näiden tekniikoiden avulla voidaan havaita ja estää hyökkäykset, kuten luvaton pääsy, 
+	tietomurrot ja palvelunestohyökkäykset, parantaen näin tiedonsiirron turvallisuutta avoimissa verkko-
+	olosuhteissa.
+
+
+Yhteenveto:
+
+
+	Salausmenetelmät ja salausprotokollat ovat keskeisiä tietoturvan elementtejä, joita käytetään 
+	tiedon suojaamiseen tietoliikenteessä. Symmetrinen salaaminen perustuu siihen, että sama 
+	salausavain käytetään sekä tiedon salaukseen että purkuun. Yleisimmät symmetriset salausalgoritmit 
+	ovat esimerkiksi AES (Advanced Encryption Standard), DES (Data Encryption Standard) ja 3DES 
+	(Triple Data Encryption Standard). Salausavaimen jakaminen ja hallinta ovat tärkeitä osia 
+	symmetristä salausta, ja turvallinen ja luotettava avaintenhallinta on välttämätöntä tiedon 
+	suojan kannalta.
+
+	Asymmetrinen salaaminen, tunnetaan myös nimellä julkisen avaimen salaaminen, käyttää erillisiä 
+	avaimia tiedon salaamiseen ja purkamiseen. Toimintaperiaate perustuu matemaattisiin funktioihin, 
+	joilla on käänteisfunktio, joka on vaikea laskea. Yleisimmät asymmetriset salausalgoritmit ovat RSA 
+	(Rivest-Shamir-Adleman), DSA (Digital Signature Algorithm) ja ECC (Elliptic Curve Cryptography). 
+	Asymmetrisessä salaamisessa käytetään julkista avainta tiedon salaamiseen ja vastaavaa yksityistä 
+	avainta purkamiseen tai digitaaliseen allekirjoitukseen.
+
+	Salausprotokollat ovat erityisiä protokollia, jotka yhdistävät salausalgoritmit ja muut 
+	turvallisuusmekanismit tietoliikenteen suojaamiseksi. SSL/TLS (Secure Sockets Layer/Transport 
+	Layer Security) on yksi yleisimmin käytetyistä salaustekniikoista, jota käytetään turvallisen 
+	yhteyden luomiseen palvelinten ja asiakasohjelmien välillä. SSH (Secure Shell) on protokolla, 
+	jota käytetään etäyhteyksien turvalliseen hallintaan ja tiedonsiirtoon verkossa. IPsec (Internet 
+	Protocol Security) puolestaan tarjoaa tietoturvapalveluita IP-verkkokerroksella, esimerkiksi 
+	VPN-yhteyksissä.
+
+	Nämä salausmenetelmät ja salausprotokollat tarjoavat keskeiset työkalut tiedon suojaamiseen 
+	ja tietoliikenteen turvallisuuden varmistamiseen. Niiden oikea valinta ja käyttö riippuvat 
+	sovelluksesta, ympäristöstä ja tietoturvavaatimuksista.
